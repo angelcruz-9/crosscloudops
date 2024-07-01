@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
         <div className="flex justify-between py-8">
           <div className="flex flex-col w-1/2">
             <div className="flex items-center">
-              <img src="/assets/logos.webp" alt="logo" className="w-10 h-10" />
+              <img src={`${process.env.PUBLIC_URL}/assets/logos.webp`} alt="logo" className="w-10 h-10" />
               <h2 className="text-2xl font-normal ml-2">Cross Cloud Ops</h2>
             </div>
             <p className="text-white text-lg mt-2">

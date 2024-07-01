@@ -80,7 +80,7 @@ const Navigation: React.FC = () => {
     <div className={` ${isScrolled ? "bg-white bg-opacity-100" : "bg-transparent"} fixed top-0 left-0 right-0 z-10`}>
       <div className="container-common flex justify-between items-center py-8">
         <div className="logo flex items-center">
-          <img src="/assets/logos.webp" alt="logo" className="w-10 h-10" />
+          <img src={`${process.env.PUBLIC_URL}/assets/logos.webp`} alt="logo" className="w-10 h-10" />
           <h2 className="text-2xl font-normal">Cross Cloud Ops</h2>
         </div>
         <div className="nav-items flex space-x-10">

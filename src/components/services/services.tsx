@@ -61,7 +61,7 @@ const Services: React.FC = () => {
               )}
             </div>
             <div className="relative w-full p-4">
-              <img src="/assets/services.png" alt="Services" />
+              <img src={`${process.env.PUBLIC_URL}/assets/services.png`} alt="Services" />
             </div>
           </div>
         </div>

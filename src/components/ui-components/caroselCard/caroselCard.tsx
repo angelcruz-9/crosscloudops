@@ -54,7 +54,7 @@ const CarouselCard: React.FC<CarouselCardProps> = ({ cards }) => {
       <div className="relative bg-white w-full flex justify-start items-center rounded-lg shadow-lg overflow-hidden mx-6 h-[650px] bg-amber-100	">
         <div className="relative w-full p-4">
           <img
-            src={cards[currentIndex].image}
+            src={`${process.env.PUBLIC_URL}/${cards[currentIndex].image}`}
             alt={cards[currentIndex].title}
             className=""
           />

@@ -62,7 +62,7 @@ const ContactUs: React.FC = () => {
             <p>info@crosscloudops.com</p>
           </div>
           <div className="relative w-full">
-            <img src="/assets/schedulemeeting.jpeg" alt="Schedular" className="w-56 pl-0 pt-4"/>
+            <img src={`${process.env.PUBLIC_URL}/assets/schedulemeeting.jpeg`} alt="Schedular" className="w-56 pl-0 pt-4"/>
           </div>
         </div>
       </div>
