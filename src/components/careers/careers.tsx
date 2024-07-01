@@ -5,7 +5,7 @@ const Careers: React.FC = () => {
     <div className="container-common">
       <div className="flex flex-col">
         <img
-          src="/assets/carrer.png"
+         src={`${process.env.PUBLIC_URL}/assets/carrer.png`}
           alt="Career"
           className="w-full h-auto max-h-96 object-contain"
         />
