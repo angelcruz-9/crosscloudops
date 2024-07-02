@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { LuMenuSquare } from "react-icons/lu";
 import { IoClose } from "react-icons/io5";
+import { Link } from 'react-router-dom';
 
 interface NavItem {
   name: string;
@@ -12,36 +13,36 @@ interface NavItem {
 const navItems: NavItem[] = [
   {
     name: "Home",
-    link: "/",
+    link: "/#home",
   },
   {
     name: "About Us",
-    link: "/aboutus",
+    link: "/#aboutus",
   },
   {
     name: "Partnerships",
     subItems: [
       {
         name: "Sales and Service Cloud",
-        link: "/sales-and-service-cloud",
+        link: "/#sales-and-service-cloud",
       },
       {
         name: "Salesforce Integration",
-        link: "/salesforce-integration",
+        link: "/#salesforce-integration",
       },
       {
         name: "Marketing Cloud",
-        link: "/marketing-cloud",
+        link: "/#marketing-cloud",
       },
       {
         name: "Pardot Implementation",
-        link: "/pardot-implementation",
+        link: "/#pardot-implementation",
       },
     ],
   },
   {
     name: "Services",
-    link: "/services",
+    link: "/#services",
   },
   {
     name: "Careers",
@@ -94,9 +95,9 @@ const Navigation: React.FC = () => {
           {navItems.map((item, index) => (
             <div key={index} className="nav-item relative">
               <div className="flex items-center">
-                <a href={item.link} className="text-lg hover:text-orange-400">
+                <Link to={item.link || "#"} className="text-lg hover:text-orange-400">
                   {item.name}
-                </a>
+                </Link>
                 {item.subItems && (
                   <div
                     className="ml-2 cursor-pointer"
@@ -113,13 +114,13 @@ const Navigation: React.FC = () => {
               {item.subItems && openDropdown === index && (
                 <div className="sub-items absolute left-0 mt-2 bg-white shadow-lg w-48">
                   {item.subItems.map((subItem, subIndex) => (
-                    <a
+                    <Link
                       key={subIndex}
-                      href={subItem.link}
+                      to={subItem.link || "#"}
                       className="block px-4 py-3 text-sm hover:text-orange-400"
                     >
                       {subItem.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               )}
@@ -140,12 +141,12 @@ const Navigation: React.FC = () => {
                 {navItems.map((item, index) => (
                   <div key={index} className="nav-item relative">
                     <div className="flex items-center justify-between">
-                      <a
-                        href={item.link}
+                      <Link
+                        to={item.link || "#"}
                         className="text-lg hover:text-orange-400"
                       >
                         {item.name}
-                      </a>
+                      </Link>
                       {item.subItems && (
                         <div
                           className="ml-2 cursor-pointer"
@@ -162,13 +163,13 @@ const Navigation: React.FC = () => {
                     {item.subItems && openDropdown === index && (
                       <div className="sub-items mt-2 bg-white shadow-lg w-full">
                         {item.subItems.map((subItem, subIndex) => (
-                          <a
+                          <Link
                             key={subIndex}
-                            href={subItem.link}
+                            to={subItem.link || "#"}
                             className="block px-4 py-3 text-sm hover:text-orange-400"
                           >
                             {subItem.name}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     )}

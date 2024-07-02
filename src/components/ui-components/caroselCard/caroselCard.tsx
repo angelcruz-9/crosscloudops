@@ -44,7 +44,7 @@ const CarouselCard: React.FC<CarouselCardProps> = ({ cards }) => {
   };
 
   return (
-    <>
+    <div className="relative">
       <div className="flex w-full items-center">
         <button
           className="bg-gray-400 text-black rounded-full w-10 h-10 hidden xl:flex items-center justify-center cursor-pointer"
@@ -88,7 +88,17 @@ const CarouselCard: React.FC<CarouselCardProps> = ({ cards }) => {
           {">"}
         </button>
       </div>
-    </>
+      <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          {cards.map((_, index) => (
+            <div
+              key={index}
+              className={`w-3 h-3 rounded-full ${
+                index === currentIndex ? "bg-blue-500" : "bg-gray-300"
+              }`}
+            ></div>
+          ))}
+       </div>   
+    </div>
   );
 };
 

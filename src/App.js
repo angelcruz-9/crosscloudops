@@ -1,29 +1,24 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import AboutUs from './components/about/about';
 import Careers from './components/careers/careers';
 import ContactUs from './components/contactus/contactus';
-import Footer from './components/footer/footer';
-import Header from './components/header/header';
-import Marketing from './components/partnerships/marketing/marketing';
-import Pardot from './components/partnerships/pardot/pardot';
-import Sales from './components/partnerships/sales/sales';
-import SalesForce from './components/partnerships/salesforce/salesForce';
-import Services from './components/services/services';
+import Home from './components/home/home';
+import NotFound from './components/NotFound/notFound';
+import Layout from './components/layout';
 
 function App() {
   return (
-    <>
-      <Header />
-      <AboutUs />
-      <Sales />
-      <SalesForce />
-      <Marketing />
-      <Pardot />
-      <Services />
-      <Careers />
-      <ContactUs />
-      <Footer />
-    </>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/contactus" element={<ContactUs />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Layout>
+    </Router>
   );
 }
 

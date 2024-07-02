@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
   return (
     <div className="bg-cyan-950">
       <div className="container-common">
-        <div className="flex flex-col xl:flex-row justify-between py-8">
+        <div className="flex flex-col xl:flex-row justify-between py-8 border-b border-gray-600">
           <div className="flex flex-col w-full xl:w-1/2">
             <div className="flex items-center">
               <img src={`${process.env.PUBLIC_URL}/assets/logos.webp`} alt="logo" className="w-10 h-10" />

@@ -1,5 +1,4 @@
 import React from "react";
-import Navigation from "./navigation";
 
 // Video Background Content Component
 const VideoBackgroundContent: React.FC = () => {
@@ -9,10 +8,13 @@ const VideoBackgroundContent: React.FC = () => {
         autoPlay
         loop
         muted
-        className="absolute inset-0 opacity-25 object-cover w-full h-full"
+        className="absolute inset-0 opacity-65 object-cover w-full h-full"
         poster="/assets/video-poster.jpg"
       >
-        <source src={`${process.env.PUBLIC_URL}/assets/video.mp4`} type="video/mp4" />
+        <source
+          src={`${process.env.PUBLIC_URL}/assets/video.mp4`}
+          type="video/mp4"
+        />
         Your browser does not support the video tag.
       </video>
       <div className="absolute inset-0 flex items-center justify-center">
@@ -22,7 +24,10 @@ const VideoBackgroundContent: React.FC = () => {
           </h1>
           <div className="text-2xl font-bold text-black flex flex-col items-center py-6">
             <h3>Personalized IT Consultancy</h3>
-            <img src={`${process.env.PUBLIC_URL}/assets/sf_logo.png`} alt="partner"/>
+            <img
+              src={`${process.env.PUBLIC_URL}/assets/sf_logo.png`}
+              alt="partner"
+            />
           </div>
           <p className="mt-4 text-lg text-black">
             Let us build optimized digital experiences to drive your company's
@@ -35,12 +40,7 @@ const VideoBackgroundContent: React.FC = () => {
 };
 
 const Header: React.FC = () => {
-  return (
-    <div>
-      <Navigation />
-      <VideoBackgroundContent />
-    </div>
-  );
+  return <VideoBackgroundContent />;
 };
 
 export default Header;
