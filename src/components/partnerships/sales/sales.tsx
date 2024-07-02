@@ -48,10 +48,10 @@ const Sales: React.FC = () => {
     <div className="bg-neutral-100">
       <div className="container-common">
         <div className="flex flex-col items-center py-24">
-          <h1 className="text-4xl font-bold tracking-wider">
+          <h1 className="text-4xl font-bold text-center xl:tracking-wider">
             A 5-Star Salesforce Partner
           </h1>
-          <h3 className="text-2xl font-normal py-4">
+          <h3 className="text-2xl text-center font-normal py-4">
             We are Salesforce Integration. Reimagined.
           </h3>
           <p className="text-xl text-center py-4">

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+import { LuMenuSquare } from "react-icons/lu";
+import { IoClose } from "react-icons/io5";
 
 interface NavItem {
   name: string;
@@ -54,15 +56,12 @@ const navItems: NavItem[] = [
 const Navigation: React.FC = () => {
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      if (scrollPosition > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(scrollPosition > 0);
     };
 
     // Attach scroll event listener
@@ -77,13 +76,21 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <div className={` ${isScrolled ? "bg-white bg-opacity-100" : "bg-transparent"} fixed top-0 left-0 right-0 z-10`}>
+    <div
+      className={` ${
+        isScrolled ? "bg-orange-200 bg-opacity-100" : "bg-transparent"
+      } fixed top-0 left-0 right-0 z-10`}
+    >
       <div className="container-common flex justify-between items-center py-8">
         <div className="logo flex items-center">
-          <img src={`${process.env.PUBLIC_URL}/assets/logos.webp`} alt="logo" className="w-10 h-10" />
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/logos.webp`}
+            alt="logo"
+            className="w-10 h-10"
+          />
           <h2 className="text-2xl font-normal">Cross Cloud Ops</h2>
         </div>
-        <div className="nav-items flex space-x-10">
+        <div className="nav-items space-x-10 hidden xl:flex">
           {navItems.map((item, index) => (
             <div key={index} className="nav-item relative">
               <div className="flex items-center">
@@ -119,6 +126,57 @@ const Navigation: React.FC = () => {
             </div>
           ))}
         </div>
+        <div className="nav-items-mobile block xl:hidden relative">
+          <LuMenuSquare size={30} onClick={() => setIsOpen(!isOpen)} />
+        </div>
+        <div
+            className={`absolute top-0 left-0 w-full bg-white shadow-lg transition-transform duration-300 ease-in-out ${
+              isOpen ? "transform translate-y-0" : "transform -translate-y-full"
+            }`}
+          >
+            {isOpen && (
+              <div className="nav-items flex flex-col space-y-4 p-4">
+                <IoClose size={30} onClick={() => setIsOpen(!isOpen)} className='absolute right-0 top-6' />
+                {navItems.map((item, index) => (
+                  <div key={index} className="nav-item relative">
+                    <div className="flex items-center justify-between">
+                      <a
+                        href={item.link}
+                        className="text-lg hover:text-orange-400"
+                      >
+                        {item.name}
+                      </a>
+                      {item.subItems && (
+                        <div
+                          className="ml-2 cursor-pointer"
+                          onClick={() => handleDropdownToggle(index)}
+                        >
+                          {openDropdown === index ? (
+                            <FiChevronUp />
+                          ) : (
+                            <FiChevronDown />
+                          )}
+                        </div>
+                      )}
+                    </div>
+                    {item.subItems && openDropdown === index && (
+                      <div className="sub-items mt-2 bg-white shadow-lg w-full">
+                        {item.subItems.map((subItem, subIndex) => (
+                          <a
+                            key={subIndex}
+                            href={subItem.link}
+                            className="block px-4 py-3 text-sm hover:text-orange-400"
+                          >
+                            {subItem.name}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
       </div>
     </div>
   );

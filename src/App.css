@@ -8,3 +8,8 @@
         width: 90%;
     }
 }   
+
+.nav-items-mobile .nav-items {
+    transition: transform 0.3s ease-in-out;
+  }
+  

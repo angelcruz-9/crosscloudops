@@ -6,7 +6,7 @@ const ContactUs: React.FC = () => {
       <h1 className="text-4xl font-bold tracking-wider pb-8 text-center py-8">
         Contact us
       </h1>
-      <div className="grid grid-cols-[40%_60%] flex justify-start items-start">
+      <div className="grid xl:grid-cols-[40%_60%] flex justify-start items-start">
         <div className="form flex flex-col">
           <input
             type="text"
@@ -47,7 +47,7 @@ const ContactUs: React.FC = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col justify-between ml-8">
+        <div className="flex flex-col justify-between mt-4 xl:mt-0 xl:ml-8">
           <p className="text-gray-600 text-xl mt-2">
             Ready to see how Cross Cloud Ops can help you drive rapid growth?
             Contact us today with the form on the left, or instantly schedule a
@@ -68,14 +68,14 @@ const ContactUs: React.FC = () => {
       </div>
       <div className="flex flex-col pt-8">
         <h2 className="text-3xl font-fold">Addresses :</h2>
-        <div className="grid grid-cols-3 py-4">
-            <div className="">
+        <div className="grid grid-cols-1 xl:grid-cols-3 py-4">
+            <div className="mb-4 xl:mb-0">
               <strong>USA Corporate Headquarters & Main Office:</strong> 201 N Illinois Street, South Tower Suite 1600, Indianapolis, IN 46204, USA
             </div>
-            <div className="">
+            <div className="mb-4 xl:mb-0">
               <strong>Cincinnati Office:</strong> 8044 Montgomery Rd Suite 700, Kenwood, OH 45236, USA
             </div>
-            <div className="">
+            <div className="mb-4 xl:mb-0">
               <strong>India Office:</strong> 14/46, 1st Floor, Phoenix Tech Tower, Uppal, Hyderabad, Telangana 500039. Phone: +91-40-6793 4217
             </div>
         </div>

@@ -44,7 +44,7 @@ const Services: React.FC = () => {
           <h1 className="text-4xl font-bold tracking-wider pb-8">
             {cardsData.heading}
           </h1>
-          <div className="flex justify-between">
+          <div className="flex flex-col xl:flex-row justify-between">
             <div className="flex flex-col">
               <p className="text-gray-600 text-xl mt-2">
                 {cardsData.description}
