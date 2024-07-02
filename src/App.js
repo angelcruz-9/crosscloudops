@@ -13,6 +13,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/crosscloudops" element={<Home />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="*" element={<NotFound />} />
