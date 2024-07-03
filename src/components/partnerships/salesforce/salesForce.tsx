@@ -23,7 +23,7 @@ const SalesForce: React.FC = () => {
   return (
     <div className="container-common">
       <div className="flex flex-col items-center py-24">
-        <h1 className="text-4xl font-bold pb-12">Salesforce Integration</h1>
+        <h1 className="text-4xl font-bold text-white pb-12">Salesforce Integration</h1>
         <Card cards={cardsData} />
       </div>
     </div>

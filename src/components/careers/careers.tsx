@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 interface JobListing {
   id: number;
@@ -9,7 +11,6 @@ interface JobListing {
 }
 
 const Careers: React.FC = () => {
-  const [showDetails, setShowDetails] = useState(false);
   const [selectedJob, setSelectedJob] = useState<JobListing | null>(null);
 
   //  data for job listings
@@ -417,19 +418,13 @@ const Careers: React.FC = () => {
     },
   ];
 
-  // Function to handle opening details popup
-  const handleOpenDetails = (jobTitle: string) => {
-    const job = jobListings.find((job) => job.title === jobTitle);
-    if (job) {
+  // Function to handle opening and closing details popup
+  const toggleDetails = (job: JobListing) => {
+    if (selectedJob && selectedJob.id === job.id) {
+      setSelectedJob(null);
+    } else {
       setSelectedJob(job);
-      setShowDetails(true);
     }
-  };
-
-  // Function to handle closing details popup
-  const handleCloseDetails = () => {
-    setShowDetails(false);
-    setSelectedJob(null);
   };
 
   return (
@@ -440,8 +435,8 @@ const Careers: React.FC = () => {
           alt="Career"
           className="w-full h-auto max-h-96 object-contain"
         />
-        <h1 className="text-4xl font-bold text-center">Careers</h1>
-        <p className="text-xl py-4">Work for the Best</p>
+        <h1 className="text-4xl font-bold text-center text-white">Careers</h1>
+        <p className="text-xl py-4 text-white">Work for the Best</p>
         <p className="text-xl text-[#b7b7b7]">
           Join the quickly developing, experienced global innovator in
           programming quality affirmation and drive your vocation higher than
@@ -450,44 +445,50 @@ const Careers: React.FC = () => {
       </div>
 
       {/* Job Listings */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+      <div className="grid grid-cols-1 gap-4 mt-8">
         {jobListings.map((job) => (
-          <div key={job.id} className="bg-white p-4 cursor-pointer rounded-lg shadow-md transition-transform duration-300 transform hover:-translate-y-1 hover:shadow-lg">
-            <h2 className="text-xl font-semibold">{job.title}</h2>
-            <div className="mt-2 flex justify-between items-center">
-              <p className="text-lg py-4">
-                <span className="text-blue-900">Experience:</span> {job.exp}
-              </p>
-              <button
-                className="text-blue-500 hover:underline"
-                onClick={() => handleOpenDetails(job.title)}
-              >
-                ...Details
+          <div
+            key={job.id}
+            className="bg-white p-4 rounded-lg shadow-md"
+            onClick={() => toggleDetails(job)}
+          >
+            <div className="flex justify-between items-center cursor-pointer">
+              <div className="flex flex-col xl:flex-row xl:items-center">
+                <h2 className="text-xl font-semibold">{job.title}</h2>
+                <p className="text-lg py-4 ml-0 xl:ml-6">
+                  <span className="text-blue-900">Experience:</span> {job.exp}
+                </p>
+              </div>
+              <button className="text-blue-500 hover:underline">
+                {selectedJob?.id === job.id ? (
+                  <IoIosArrowUp />
+                ) : (
+                  <IoIosArrowDown />
+                )}
               </button>
             </div>
+            {/* Dropdown block for details */}
+            <AnimatePresence>
+              {selectedJob?.id === job.id && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="overflow-hidden mt-4"
+                >
+                  <div className="text-lg text-[#b7b7b7] p-4">
+                    <h3 className="text-2xl text-black font-semibold mb-4">
+                      {selectedJob.popupTitle}
+                    </h3>
+                    {selectedJob.description}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         ))}
       </div>
-
-      {/* Details Popup */}
-      {showDetails && (
-        <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-6 w-[90%] h-[600px] xl:max-w-lg xl:h-[900px] mx-auto rounded-lg shadow-xl overflow-y-auto">
-            <h2 className="text-2xl font-semibold mb-4">
-              {selectedJob?.popupTitle}
-            </h2>
-            {selectedJob?.description}
-            <div className="mt-4 flex justify-end">
-              <button
-                className="text-blue-500 hover:underline"
-                onClick={handleCloseDetails}
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

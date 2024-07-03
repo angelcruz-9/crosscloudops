@@ -3,6 +3,10 @@
     width: 1200px;
 }
 
+.content{
+    background-color: rgb(17, 17, 17);
+}
+
 @media only screen and (max-width: 1280px) {
     .container-common {
         width: 90%;

@@ -18,16 +18,14 @@ const cardData = [
 
 const Marketing: React.FC = () => {
   return (
-    <div className="bg-neutral-100">
       <div className="container-common">
         <div className="flex flex-col items-center py-24">
-          <h1 className="text-4xl font-bold tracking-wider pb-8">
+          <h1 className="text-4xl font-bold tracking-wider pb-8 text-white">
             Marketing Cloud
           </h1>
           <CarouselCard cards={cardData} />
         </div>
       </div>
-    </div>
   );
 };
 

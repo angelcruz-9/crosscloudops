@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import Services from './components/services/services';
 import Careers from './components/careers/careers';
 import ContactUs from './components/contactus/contactus';
 import Home from './components/home/home';
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/crosscloudops" element={<Home />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="*" element={<NotFound />} />

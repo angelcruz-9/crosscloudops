@@ -1,69 +1,69 @@
 import React from "react";
-import { FiCheckCircle } from "react-icons/fi";
+import CardImage from "../ui-components/card-image/cardImage";
 
-const cardsData = {
-    heading : "IT Operations / DevOps & QA / Managed Services",
-    description : "Our Onshore, Offshore, Nearshore round-the-clock service and support mixed model is top class with proven results. Here are a few services at a glance...",
-    subItems : [
-        {
-           icon : FiCheckCircle,
-           text : "Support expertise for niche areas" 
-        },
-        {
-            icon : FiCheckCircle,
-            text : "Flexible model for each workstream " 
-         },
-         {
-            icon : FiCheckCircle,
-            text : "Services with ITSM process" 
-         },
-         {
-            icon : FiCheckCircle,
-            text : "Provide expertise in Multi-Industry verticals and Platforms" 
-         },
-         {
-            icon : FiCheckCircle,
-            text : "24/7 global support network maintenance" 
-         },
-         {
-            icon : FiCheckCircle,
-            text : "Customized services and solutions including POC" 
-         },
-         {
-            icon : FiCheckCircle,
-            text : "Skilled and service areas with resource flexibility" 
-         }
-    ]
-}
+const cardsData = [
+  {
+    imageSrc: "/assets/service1.jpeg",
+    title: "Digital Marketing",
+    description:
+      "Social media marketing (SMM) is a form of internet marketing that involves creating and sharing advertising content on social media networks",
+    linkUrl: "#",
+    linkText: "Learn more",
+  },
+  {
+    imageSrc: "/assets/service2.jpeg",
+    title: "Web Portal Development & Solutions",
+    description:
+      "When a customer is looking for a new product or service in your area, they usually begin their search online.",
+    linkUrl: "#",
+    linkText: "Learn more",
+  },
+  {
+    imageSrc: "/assets/service3.jpg",
+    title: "Mobile Apps Development",
+    description:
+      "CrossCloudOps helps in shaping companies by integrating strategy, creativity, analytics, and technical expertise. In coordination with",
+    linkUrl: "#",
+    linkText: "Learn more",
+  },
+  {
+    imageSrc: "/assets/service4.jpeg",
+    title: "Application Development",
+    description:
+      "All businesses, regardless of their size, have one thing in common. They are unique. No business anywhere in the world runs exactly",
+    linkUrl: "#",
+    linkText: "Learn more",
+  },
+  {
+    imageSrc: "/assets/service5.jpeg",
+    title: "IT Consulting",
+    description:
+      "CrossCloudOps Consulting is a full-service IT Consulting Firm specializing in IT project management, systems.",
+    linkUrl: "#",
+    linkText: "Learn more",
+  },
+];
 
 const Services: React.FC = () => {
   return (
-    <div className="bg-neutral-100">
+    <div className="flex flex-col items-center py-24">
+      <div className="w-full h-52 bg-gradient-to-r from-purple-300 to-indigo-400">
+        <div className="container-common">
+          <h1 className="text-4xl font-bold text-black py-20">Services</h1>
+        </div>
+      </div>
       <div className="container-common">
-        <div className="flex flex-col items-center py-24">
-          <h1 className="text-4xl font-bold tracking-wider pb-8">
-            {cardsData.heading}
-          </h1>
-          <div className="flex flex-col xl:flex-row justify-between">
-            <div className="flex flex-col">
-              <p className="text-gray-600 text-xl mt-2">
-                {cardsData.description}
-              </p>
-              {cardsData.subItems && (
-                <div className="mt-4 flex flex-col">
-                  {cardsData.subItems?.map((item, index) => (
-                    <div key={index} className="flex py-2">
-                      <item.icon size={24} color="blue" />{" "}
-                      <p className="ml-2">{item.text}</p>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-            <div className="relative w-full p-4">
-              <img src={`${process.env.PUBLIC_URL}/assets/services.png`} alt="Services" />
-            </div>
-          </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+          {cardsData.map((item, index) => (
+            <CardImage
+              key={index}
+              imageSrc={item.imageSrc}
+              title={item.title}
+              description={item.description}
+              linkUrl={item.linkUrl}
+              linkText={item.linkText}
+            />
+          ))}
         </div>
       </div>
     </div>

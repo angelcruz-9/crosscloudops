@@ -32,8 +32,8 @@ const Pardot: React.FC = () => {
   return (
     <div className="container-common">
       <div className="flex flex-col items-center py-24">
-        <h1 className="text-4xl font-bold pb-12">Pardot Implementation</h1>
-        <p className="text-xl text-center py-10">
+        <h1 className="text-4xl font-bold pb-12 text-white">Pardot Implementation</h1>
+        <p className="text-xl text-center py-10 text-white">
           Our B2B strategies excel across verticals, making your Pardot
           Implementation the most effective it can be.
         </p>

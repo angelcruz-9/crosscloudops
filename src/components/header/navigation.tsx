@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { LuMenuSquare } from "react-icons/lu";
 import { IoClose } from "react-icons/io5";
-import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from "framer-motion";
+import NavigationItem from "./navigationItem";
 
 interface NavItem {
   name: string;
   link?: string;
-  subItems?: NavItem[];
+  subItems?: {
+    Title: string;
+    items: {
+      name: string;
+      link: string;
+    }[];
+  }[];
 }
 
 const navItems: NavItem[] = [
@@ -20,29 +26,69 @@ const navItems: NavItem[] = [
     link: "/#aboutus",
   },
   {
-    name: "Partnerships",
+    name: "Technologies",
+    link: "/#salesforce",
     subItems: [
       {
-        name: "Sales and Service Cloud",
-        link: "/#sales-and-service-cloud",
+        Title: "Technology Platforms",
+        items: [
+          {
+            name: "Cloud Solutions(Azure,AWS)",
+            link: "#",
+          },
+          {
+            name: "Oracle",
+            link: "#",
+          },
+          {
+            name: "Salesforce",
+            link: "/#salesforce",
+          },
+        ],
       },
       {
-        name: "Salesforce Integration",
-        link: "/#salesforce-integration",
+        Title: "Technology Expertise",
+        items: [
+          {
+            name: "Artificial Intelligence (AI)",
+            link: "#",
+          },
+          {
+            name: "Data Analysis",
+            link: "#",
+          },
+          {
+            name: "CRM Consulting",
+            link: "#",
+          },
+        ],
       },
       {
-        name: "Marketing Cloud",
-        link: "/#marketing-cloud",
-      },
-      {
-        name: "Pardot Implementation",
-        link: "/#pardot-implementation",
+        Title: "Technology Delivery",
+        items: [
+          {
+            name: "Devops",
+            link: "#",
+          },
+          {
+            name: "IT Strategy",
+            link: "#",
+          },
+          {
+            name: "Modern Software Delivery",
+            link: "#",
+          },
+          {
+            name: "Outsourcing",
+            link: "#",
+          },
+        ],
       },
     ],
   },
   {
     name: "Services",
-    link: "/#services",
+    link: "/services",
   },
   {
     name: "Careers",
@@ -76,10 +122,14 @@ const Navigation: React.FC = () => {
     setOpenDropdown(openDropdown === index ? null : index);
   };
 
+  const handleMobileMenuToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div
-      className={` ${
-        isScrolled ? "bg-orange-200 bg-opacity-100" : "bg-transparent"
+      className={`${
+        isScrolled ? "bg-neutral-800 bg-opacity-100" : "bg-transparent"
       } fixed top-0 left-0 right-0 z-10`}
     >
       <div className="container-common flex justify-between items-center py-8">
@@ -89,95 +139,53 @@ const Navigation: React.FC = () => {
             alt="logo"
             className="w-10 h-10"
           />
-          <h2 className="text-2xl font-normal">Cross Cloud Ops</h2>
+          <h2 className='text-2xl ml-2 font-normal text-white'>Cross Cloud Ops</h2>
         </div>
         <div className="nav-items space-x-10 hidden xl:flex">
           {navItems.map((item, index) => (
-            <div key={index} className="nav-item relative">
-              <div className="flex items-center">
-                <Link to={item.link || "#"} className="text-lg hover:text-orange-400">
-                  {item.name}
-                </Link>
-                {item.subItems && (
-                  <div
-                    className="ml-2 cursor-pointer"
-                    onClick={() => handleDropdownToggle(index)}
-                  >
-                    {openDropdown === index ? (
-                      <FiChevronUp />
-                    ) : (
-                      <FiChevronDown />
-                    )}
-                  </div>
-                )}
-              </div>
-              {item.subItems && openDropdown === index && (
-                <div className="sub-items absolute left-0 mt-2 bg-white shadow-lg w-48">
-                  {item.subItems.map((subItem, subIndex) => (
-                    <Link
-                      key={subIndex}
-                      to={subItem.link || "#"}
-                      className="block px-4 py-3 text-sm hover:text-orange-400"
-                    >
-                      {subItem.name}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+            <NavigationItem
+              key={index}
+              item={item}
+              index={index}
+              handleDropdownToggle={handleDropdownToggle}
+            />
           ))}
         </div>
-        <div className="nav-items-mobile block xl:hidden relative">
-          <LuMenuSquare size={30} onClick={() => setIsOpen(!isOpen)} />
+        <div className="nav-items-mobile text-white block xl:hidden relative">
+          <LuMenuSquare size={30} onClick={handleMobileMenuToggle} />
         </div>
-        <div
-            className={`absolute top-0 left-0 w-full bg-white shadow-lg transition-transform duration-300 ease-in-out ${
-              isOpen ? "transform translate-y-0" : "transform -translate-y-full"
-            }`}
-          >
-            {isOpen && (
-              <div className="nav-items flex flex-col space-y-4 p-4">
-                <IoClose size={30} onClick={() => setIsOpen(!isOpen)} className='absolute right-0 top-6' />
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -100 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -100 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="absolute top-0 left-0 w-full bg-black shadow-lg"
+            >
+              <IoClose
+                size={30}
+                onClick={handleMobileMenuToggle}
+                className="absolute right-0 top-6 text-white cursor-pointer"
+              />
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="nav-items flex flex-col text-white space-y-4 p-4"
+              >
                 {navItems.map((item, index) => (
-                  <div key={index} className="nav-item relative">
-                    <div className="flex items-center justify-between">
-                      <Link
-                        to={item.link || "#"}
-                        className="text-lg hover:text-orange-400"
-                      >
-                        {item.name}
-                      </Link>
-                      {item.subItems && (
-                        <div
-                          className="ml-2 cursor-pointer"
-                          onClick={() => handleDropdownToggle(index)}
-                        >
-                          {openDropdown === index ? (
-                            <FiChevronUp />
-                          ) : (
-                            <FiChevronDown />
-                          )}
-                        </div>
-                      )}
-                    </div>
-                    {item.subItems && openDropdown === index && (
-                      <div className="sub-items mt-2 bg-white shadow-lg w-full">
-                        {item.subItems.map((subItem, subIndex) => (
-                          <Link
-                            key={subIndex}
-                            to={subItem.link || "#"}
-                            className="block px-4 py-3 text-sm hover:text-orange-400"
-                          >
-                            {subItem.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
+                  <NavigationItem
+                    key={index}
+                    item={item}
+                    index={index}
+                    handleDropdownToggle={handleDropdownToggle}
+                  />
                 ))}
-              </div>
-            )}
-          </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
