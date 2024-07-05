@@ -9,9 +9,9 @@ const Home = () => {
 
   return (
     <div>
-      <section id="home">
+       <section id="home">
         <Header />
-      </section>  
+      </section> 
       <section id="aboutus">
         <AboutUs />
       </section>

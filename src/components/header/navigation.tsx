@@ -129,7 +129,7 @@ const Navigation: React.FC = () => {
   return (
     <div
       className={`${
-        isScrolled ? "bg-neutral-800 bg-opacity-100" : "bg-transparent"
+        isScrolled ? "shadow-lg bg-slate-900 bg-opacity-100" : "bg-transparent"
       } fixed top-0 left-0 right-0 z-10`}
     >
       <div className="container-common flex justify-between items-center py-8">

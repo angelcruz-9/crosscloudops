@@ -1,53 +1,15 @@
 import React from "react";
+import { SignupFormDemo } from "./signupform/signupForm";
 
 const ContactUs: React.FC = () => {
   return (
     <div className="container-common py-24">
-      <h1 className="text-4xl font-bold tracking-wider pb-8 text-center py-8 text-white">
+      <h1 className="text-4xl font-bold tracking-wider text-center pt-8 text-white">
         Contact us
       </h1>
       <div className="grid xl:grid-cols-[40%_60%] flex justify-start items-start">
-        <div className="form flex flex-col">
-          <input
-            type="text"
-            id="firstNameId"
-            placeholder="First Name *"
-            className="border border-slate-400	border-solid rounded py-1 px-2 w-full mb-4"
-          />
-          <input
-            type="text"
-            id="secondNameId"
-            placeholder="Last Name *"
-            className="border border-slate-400	border-solid rounded py-1 px-2 w-full mb-4"
-          />
-          <input
-            type="email"
-            id="emailId"
-            placeholder="E-Mail *"
-            className="border border-slate-400 border-solid rounded py-1 px-2 w-full mb-4"
-          />
-          <input
-            type="text"
-            id="phoneId"
-            placeholder="Phone"
-            className="border border-slate-400 border-solid rounded py-1 px-2 w-full mb-4"
-          />
-          <div className="messageContainer">
-            <textarea
-              id="textAreaId"
-              placeholder="Tell us how we can help."
-              className="border border-slate-400 border-solid rounded py-1 px-2 w-full mb-4"
-            ></textarea>
-          </div>
-          <div>
-            <input
-              type="submit"
-              className="w-full rounded bg-slate-950 text-white h-12 cursor-pointer"
-              value="Submit"
-            />
-          </div>
-        </div>
-        <div className="flex flex-col justify-between mt-4 xl:mt-0 xl:ml-8">
+        <SignupFormDemo />
+        <div className="flex flex-col justify-between mt-4 xl:mt-20 xl:ml-8">
           <p className="text-gray-600 text-xl mt-2 text-white">
             Ready to see how Cross Cloud Ops can help you drive rapid growth?
             Contact us today with the form on the left, or instantly schedule a
@@ -61,8 +23,12 @@ const ContactUs: React.FC = () => {
             <label className="text-orange-400">Email :</label>
             <p className="text-white">info@crosscloudops.com</p>
           </div>
-          <div className="relative w-full">
-            <img src={`${process.env.PUBLIC_URL}/assets/schedulemeeting.jpeg`} alt="Schedular" className="w-56 pl-0 pt-4"/>
+          <div className="relative py-8 w-44 cursor-pointer">
+            <div className="border b-white p-1 rounded-lg">
+              <div className="bg-orange-400 rounded-lg hover:bg-orange-600">
+                <h2 className="text-white text-center text-xl text-semibold p-1">Schedule a Demo</h2>
+              </div>
+            </div>
           </div>
         </div>
       </div>

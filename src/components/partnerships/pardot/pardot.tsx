@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../../ui-components/card/card";
+import { InfiniteMovingCards } from "./infinitescrollingcard";
 
 const cardsData = [
   {
@@ -25,21 +25,21 @@ const cardsData = [
     description:
       "Accelerate your sales cycle and track engagement using campaigns.      ",
     image: "/assets/grow.png",
-  }
+  },
 ];
 
 const Pardot: React.FC = () => {
   return (
-    <div className="container-common">
       <div className="flex flex-col items-center py-24">
-        <h1 className="text-4xl font-bold pb-12 text-white">Pardot Implementation</h1>
-        <p className="text-xl text-center py-10 text-white">
+        <h1 className="text-4xl font-bold text-white mx-auto px-6">Pardot Implementation</h1>
+        <p className="text-xl text-center py-10 text-white mx-auto">
           Our B2B strategies excel across verticals, making your Pardot
           Implementation the most effective it can be.
         </p>
-        <Card cards={cardsData} />
+        <div className="rounded-md flex flex-col w-full overflow-hidden xl:overflow-auto items-center justify-center relative  mx-auto">
+          <InfiniteMovingCards items={cardsData} direction="right" />
+        </div>
       </div>
-    </div>
   );
 };
 

@@ -10,7 +10,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <Navigation />
-      <div className="content">
+      <div className="bg-primary">
         {children}
       </div>
       <Footer />
