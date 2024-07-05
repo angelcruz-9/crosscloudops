@@ -65,7 +65,7 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn("scroller relative z-20 max-w-7xl", className)}
-      style={{ "--animation-duration": "30s" } as React.CSSProperties} // Normal speed
+      style={{ "--animation-duration": "40s" } as React.CSSProperties} // Normal speed
     >
       <ul
         ref={scrollerRef}
@@ -99,7 +99,7 @@ export const InfiniteMovingCards = ({
                 <h3 className="text-xl font-semibold text-center text-white mb-2">
                   {card.title}
                 </h3>
-                <p className="text-white text-center">{card.description}</p>
+                <p className="text-white text-sm text-center">{card.description}</p>
               </div>
             </li>
           );

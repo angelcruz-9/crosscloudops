@@ -1,24 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { BackgroundBeams } from "./background-beams";
 
 const Header: React.FC = () => {
   return (
-    <section className="relative pt-40 xl:py-40 overflow-hidden">
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-black via-gray-900 to-black"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: [0, 0.5, 0] }}
-        transition={{
-          duration: 5,
-          ease: "easeInOut",
-          repeat: Infinity,
-          repeatType: "mirror",
-        }}
-      />
+    <section className="relative pt-40 xl:pt-36 overflow-hidden">
+      <BackgroundBeams />
       <div className="container-common relative flex flex-col xl:flex-row justify-between">
         <div className="text-center xl:text-left w-full xl:w-1/2">
           <motion.h1
-            className="text-4xl font-bold text-white"
+            className="relative z-10 text-lg md:text-5xl  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-left font-sans font-bold"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
@@ -32,9 +23,9 @@ const Header: React.FC = () => {
               className="mt-4 ml-24 xl:ml-0"
               width={120}
             />
-            <h3 className="ml-8">Personalized IT Consultancy</h3>
+            <h3 className="ml-8 text-[#fafafa] max-w-lg mx-auto my-2 text-md text-left relative z-10">Personalized IT Consultancy</h3>
           </div>
-          <p className="mt-4 text-lg text-white">
+          <p className="mt-4 text-[#fafafa] max-w-lg my-2 text-md text-left relative z-10">
             Let us build optimized digital experiences to drive your company's
             rapid growth.
           </p>

@@ -1,5 +1,6 @@
 import React from "react";
 import CarouselCard from "../../ui-components/caroselCard/caroselCard";
+import { StickyScroll } from "./sticky-scroll-reveal";
 
 const cardData = [
   {
@@ -18,14 +19,16 @@ const cardData = [
 
 const Marketing: React.FC = () => {
   return (
-      <div className="container-common">
-        <div className="flex flex-col items-center py-24">
-          <h1 className="text-4xl font-bold tracking-wider pb-8 text-white">
-            Marketing Cloud
-          </h1>
-          <CarouselCard cards={cardData} />
+    <div className="container-common">
+      <div className="flex flex-col items-center py-24">
+        <h1 className="text-4xl font-bold tracking-wider pb-8 text-white">
+          Marketing Cloud
+        </h1>
+        <div className="p-10">
+          <StickyScroll content={cardData} />
         </div>
       </div>
+    </div>
   );
 };
 
