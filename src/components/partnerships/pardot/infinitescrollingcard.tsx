@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "../../../utils/cn";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { motion } from "framer-motion";
 
 export const InfiniteMovingCards = ({
@@ -22,29 +22,7 @@ export const InfiniteMovingCards = ({
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
 
-  useEffect(() => {
-    addAnimation();
-  }, []);
-
-  const [start, setStart] = useState(false);
-
-  const addAnimation = () => {
-    if (containerRef.current && scrollerRef.current) {
-      const scrollerContent = Array.from(scrollerRef.current.children);
-
-      scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true);
-        if (scrollerRef.current) {
-          scrollerRef.current.appendChild(duplicatedItem);
-        }
-      });
-
-      getDirection();
-      setStart(true);
-    }
-  };
-
-  const getDirection = () => {
+  const getDirection = useCallback(() => {
     if (containerRef.current) {
       if (direction === "left") {
         containerRef.current.style.setProperty(
@@ -58,15 +36,35 @@ export const InfiniteMovingCards = ({
         );
       }
     }
-  };
+  }, [direction]);
+
+  const addAnimation = useCallback(() => {
+    if (containerRef.current && scrollerRef.current) {
+      const scrollerContent = Array.from(scrollerRef.current.children);
+
+      scrollerContent.forEach((item) => {
+        const duplicatedItem = item.cloneNode(true);
+        if (scrollerRef.current) {
+          scrollerRef.current.appendChild(duplicatedItem);
+        }
+      });
+
+      getDirection();
+      setStart(true);
+    }
+  }, [getDirection]);
+
+
+  useEffect(() => {
+    addAnimation();
+  }, [addAnimation]);
+
+  const [start, setStart] = useState(false);
 
   return (
     <div
       ref={containerRef}
-      className={cn(
-        "scroller relative z-20 max-w-7xl",
-        className
-      )}
+      className={cn("scroller relative z-20 max-w-7xl", className)}
       style={{ "--animation-duration": "30s" } as React.CSSProperties} // Normal speed
     >
       <ul
