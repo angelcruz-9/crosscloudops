@@ -17,14 +17,8 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  {
-    name: "Home",
-    link: "/#home",
-  },
-  {
-    name: "About Us",
-    link: "/#aboutus",
-  },
+  { name: "Home", link: "/#home" },
+  { name: "About Us", link: "/#aboutus" },
   {
     name: "Technologies",
     link: "/#salesforce",
@@ -32,72 +26,33 @@ const navItems: NavItem[] = [
       {
         Title: "Technology Platforms",
         items: [
-          {
-            name: "Cloud Solutions(Azure,AWS)",
-            link: "#",
-          },
-          {
-            name: "Oracle",
-            link: "#",
-          },
-          {
-            name: "Salesforce",
-            link: "/#salesforce",
-          },
+          { name: "Cloud Solutions(Azure,AWS)", link: "#" },
+          { name: "Oracle", link: "#" },
+          { name: "Salesforce", link: "/#salesforce" },
         ],
       },
       {
         Title: "Technology Expertise",
         items: [
-          {
-            name: "Artificial Intelligence (AI)",
-            link: "#",
-          },
-          {
-            name: "Data Analysis",
-            link: "#",
-          },
-          {
-            name: "CRM Consulting",
-            link: "#",
-          },
+          { name: "Artificial Intelligence (AI)", link: "#" },
+          { name: "Data Analysis", link: "#" },
+          { name: "CRM Consulting", link: "#" },
         ],
       },
       {
         Title: "Technology Delivery",
         items: [
-          {
-            name: "Devops",
-            link: "#",
-          },
-          {
-            name: "IT Strategy",
-            link: "#",
-          },
-          {
-            name: "Modern Software Delivery",
-            link: "#",
-          },
-          {
-            name: "Outsourcing",
-            link: "#",
-          },
+          { name: "Devops", link: "#" },
+          { name: "IT Strategy", link: "#" },
+          { name: "Modern Software Delivery", link: "#" },
+          { name: "Outsourcing", link: "#" },
         ],
       },
     ],
   },
-  {
-    name: "Services",
-    link: "/services",
-  },
-  {
-    name: "Careers",
-    link: "/careers",
-  },
-  {
-    name: "Contact Us",
-    link: "/contactus",
-  },
+  { name: "Services", link: "/services" },
+  { name: "Careers", link: "/careers" },
+  { name: "Contact Us", link: "/contactus" },
 ];
 
 const Navigation: React.FC = () => {
@@ -111,10 +66,8 @@ const Navigation: React.FC = () => {
       setIsScrolled(scrollPosition > 0);
     };
 
-    // Attach scroll event listener
     window.addEventListener("scroll", handleScroll);
 
-    // Clean up
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -130,7 +83,7 @@ const Navigation: React.FC = () => {
     <div
       className={`${
         isScrolled ? "shadow-lg bg-slate-900 bg-opacity-100" : "bg-transparent"
-      } fixed top-0 left-0 right-0 z-10`}
+      } fixed top-0 left-0 right-0 z-50`}
     >
       <div className="container-common flex justify-between items-center py-8">
         <div className="logo flex items-center">
@@ -139,7 +92,9 @@ const Navigation: React.FC = () => {
             alt="logo"
             className="w-10 h-10"
           />
-          <h2 className='text-2xl ml-2 font-normal text-white'>Cross Cloud Ops</h2>
+          <h2 className="text-2xl ml-2 font-normal text-white">
+            Cross Cloud Ops
+          </h2>
         </div>
         <div className="nav-items space-x-10 hidden xl:flex">
           {navItems.map((item, index) => (

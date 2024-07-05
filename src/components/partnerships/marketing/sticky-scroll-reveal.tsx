@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState, useMemo } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
-import { cn } from "../.././../utils/cn";
+import { cn } from "../../../utils/cn";
 
 export const StickyScroll = ({
   content,
@@ -11,7 +11,7 @@ export const StickyScroll = ({
   content: {
     title: string;
     description: string;
-    Image?: string;
+    content?: React.ReactNode | any;
   }[];
   contentClassName?: string;
 }) => {
@@ -40,18 +40,18 @@ export const StickyScroll = ({
     setActiveCard(closestBreakpointIndex);
   });
 
-  const backgroundColors = useMemo(
-    () => ["var(--slate-900)", "var(--black)", "var(--neutral-900)"],
-    []
-  );
-  const linearGradients = useMemo(
-    () => [
-      "linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))",
-      "linear-gradient(to bottom right, var(--pink-500), var(--indigo-500))",
-      "linear-gradient(to bottom right, var(--orange-500), var(--yellow-500))",
-    ],
-    []
-  );
+  const backgroundColors = [
+    "var(--slate-900)",
+    "var(--black)",
+    "var(--neutral-900)",
+  ];
+
+  // Initialize linearGradients using useMemo to memoize its value
+  const linearGradients = useMemo(() => [
+    "linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))",
+    "linear-gradient(to bottom right, var(--pink-500), var(--indigo-500))",
+    "linear-gradient(to bottom right, var(--orange-500), var(--yellow-500))",
+  ], []);
 
   const [backgroundGradient, setBackgroundGradient] = useState(
     linearGradients[0]
@@ -66,13 +66,13 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="h-[30rem] overflow-y-auto flex justify-center relative space-x-10 rounded-md p-10"
+      className="h-[30rem] overflow-y-auto flex justify-center relative space-x-10 rounded-lg p-10"
       ref={ref}
     >
       <div className="div relative flex items-start px-4">
         <div className="max-w-2xl">
           {content.map((item, index) => (
-            <div key={item.title + index} className="my-20">
+            <div key={item.title + index} className="mt-12 mb-16">
               <motion.h2
                 initial={{
                   opacity: 0,
@@ -91,7 +91,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-kg text-slate-300 max-w-sm mt-10"
+                className="text-lg text-gray-500 max-w-sm mt-10"
               >
                 {item.description}
               </motion.p>
@@ -103,17 +103,11 @@ export const StickyScroll = ({
       <div
         style={{ background: backgroundGradient }}
         className={cn(
-          "h-60 w-80 rounded-md bg-white sticky top-10 overflow-hidden",
+          "hidden lg:block h-60 w-80 rounded-md bg-white sticky top-10 overflow-hidden",
           contentClassName
         )}
       >
-        {content[activeCard].Image ? (
-          <img
-            src={content[activeCard].Image}
-            alt="Poster"
-            className="h-full w-full object-cover"
-          />
-        ) : null}
+        {content[activeCard].content ?? null}
       </div>
     </motion.div>
   );

@@ -99,7 +99,7 @@ export const InfiniteMovingCards = ({
                 <h3 className="text-xl font-semibold text-center text-white mb-2">
                   {card.title}
                 </h3>
-                <p className="text-white text-sm text-center">{card.description}</p>
+                <p className="text-gray-500 text-sm text-center">{card.description}</p>
               </div>
             </li>
           );

@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
               <img src={`${process.env.PUBLIC_URL}/assets/logos.webp`} alt="logo" className="w-10 h-10" />
               <h2 className="text-2xl font-normal ml-2 text-white">Cross Cloud Ops</h2>
             </div>
-            <p className="text-white text-lg mt-2">
+            <p className="text-gray-500 text-lg mt-2">
               Cross Cloud Ops helps our customers integrate and optimize
               Salesforce Marketing Cloud. A Salesforce Partner, our certified,
               knowledgeable experts enable rapid adoption of Salesforce
@@ -46,19 +46,19 @@ const Footer: React.FC = () => {
             </p>
           </div>
           <div className="flex flex-col mt-4">
-            <h2 className="text-2xl font-semibold">Quick Links</h2>
+            <h2 className="text-2xl font-semibold text-white">Quick Links</h2>
             {navItems.map((item, index) => (
               <a
                 href={item.link}
                 key={index}
-                className="text-white text-md mt-2 hover:text-gray-300"
+                className="text-gray-500 text-md mt-2 hover:text-gray-300"
               >
                 {item.name}
               </a>
             ))}
           </div>
         </div>
-        <p className="py-4 text-center tracking-wide text-white">Copyright © All Rights Reserved | Privacy Policy</p>
+        <p className="py-4 text-center tracking-wide text-gray-500">Copyright © All Rights Reserved | Privacy Policy</p>
       </div>
     </div>
   );

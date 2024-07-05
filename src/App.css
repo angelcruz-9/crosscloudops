@@ -14,19 +14,5 @@
   }
   
 
-  .circuit-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 300px; /* Adjust height as needed */
-    background-color: #222; /* Dark background color */
-  }
   
-  .node {
-    width: 100%;
-    height: auto;
-    padding: 4px;
-    margin: 0 20px;
-    background-color: #4CAF50; /* Green node color */
-  }
-  
+

@@ -23,7 +23,7 @@ const Careers: React.FC = () => {
         "SFMC Consultant/Developer Job Description (JD) : 2+ years exp",
       description: (
         <>
-          <p className="text-lg text-[#b7b7b7] py-4">
+          <p className="text-lg text-gray-500 py-4">
             <span className="text-black font-bold">Role:</span> <br />{" "}
             Salesforce Marketing Cloud (SFMC) Consultant is a hybrid of business
             and technical consultants with the ability to operate as a digital
@@ -31,7 +31,7 @@ const Careers: React.FC = () => {
             lead the operations team to design and deliver high-quality,
             scalable technical solutions.
           </p>
-          <p className="text-lg text-[#b7b7b7] py-4">
+          <p className="text-lg text-gray-500 py-4">
             <span className="text-black font-bold">Responsibilities:</span>
             <ul className="list-disc pl-6 py-2">
               <li>
@@ -67,7 +67,7 @@ const Careers: React.FC = () => {
               </li>
             </ul>
           </p>
-          <p className="text-lg text-[#b7b7b7] py-4">
+          <p className="text-lg text-gray-500 py-4">
             <span className="text-black font-bold">Required Skills:</span>
             <ul className="list-disc pl-6 py-2">
               <li>
@@ -113,7 +113,7 @@ const Careers: React.FC = () => {
         "Sr.SFMC Developer/Consultant Job Description (JD) : 3+ years exp",
       description: (
         <>
-          <p className="text-lg text-[#b7b7b7] py-4">
+          <p className="text-lg text-gray-500 py-4">
             <span className="text-black font-bold">Role:</span> <br />{" "}
             Salesforce Marketing Cloud (SFMC) Sr.Developer/Consultant is a
             hybrid of business and technical consultants with the ability to
@@ -121,7 +121,7 @@ const Careers: React.FC = () => {
             Cloud. Be part of and lead the operations team to design and deliver
             high-quality, scalable technical solutions.
           </p>
-          <p className="text-lg text-[#b7b7b7] py-4">
+          <p className="text-lg text-gray-500 py-4">
             <span className="text-black font-bold">Responsibilities:</span>
             <ul className="list-disc pl-6 py-2">
               <li>
@@ -157,7 +157,7 @@ const Careers: React.FC = () => {
               </li>
             </ul>
           </p>
-          <p className="text-lg text-[#b7b7b7] py-4">
+          <p className="text-lg text-gray-500 py-4">
             <span className="text-black font-bold">Required Skills:</span>
             <ul className="list-disc pl-6 py-2">
               <li>
@@ -203,7 +203,7 @@ const Careers: React.FC = () => {
         "SFMC Technical Lead/Architect Job Description (JD) : 5+ years exp",
       description: (
         <>
-          <p className="text-lg text-[#b7b7b7] py-4">
+          <p className="text-lg text-gray-500 py-4">
             <span className="text-black font-bold">Role:</span> <br />{" "}
             Salesforce Marketing Cloud (SFMC) Sr.Developer/Consultant is a
             hybrid of business and technical consultants with the ability to
@@ -211,7 +211,7 @@ const Careers: React.FC = () => {
             Cloud. Be part of and lead the operations team to design and deliver
             high-quality, scalable technical solutions.
           </p>
-          <p className="text-lg text-[#b7b7b7] py-4">
+          <p className="text-lg text-gray-500 py-4">
             <span className="text-black font-bold">Responsibilities:</span>
             <ul className="list-disc pl-6 py-2">
               <li>
@@ -260,7 +260,7 @@ const Careers: React.FC = () => {
               </li>
             </ul>
           </p>
-          <p className="text-lg text-[#b7b7b7] py-4">
+          <p className="text-lg text-gray-500 py-4">
             <span className="text-black font-bold">Required Skills:</span>
             <ul className="list-disc pl-6 py-2">
               <li>
@@ -306,7 +306,7 @@ const Careers: React.FC = () => {
         "SFMC Solutions Architect Job Description (JD) : 5+ years exp",
       description: (
         <>
-          <p className="text-lg text-[#b7b7b7] py-4">
+          <p className="text-lg text-gray-500 py-4">
             <span className="text-black font-bold">Role:</span> <br />{" "}
             Salesforce Marketing Cloud (SFMC) Sr.Developer/Consultant is a
             hybrid of business and technical consultants with the ability to
@@ -314,7 +314,7 @@ const Careers: React.FC = () => {
             Cloud. Be part of and lead the operations team to design and deliver
             high-quality, scalable technical solutions.
           </p>
-          <p className="text-lg text-[#b7b7b7] py-4">
+          <p className="text-lg text-gray-500 py-4">
             <span className="text-black font-bold">Responsibilities:</span>
             <ul className="list-disc pl-6 py-2">
               <li>
@@ -378,7 +378,7 @@ const Careers: React.FC = () => {
               </li>
             </ul>
           </p>
-          <p className="text-lg text-[#b7b7b7] py-4">
+          <p className="text-lg text-gray-500 py-4">
             <span className="text-black font-bold">Required Skills:</span>
             <ul className="list-disc pl-6 py-2">
               <li>
@@ -449,7 +449,7 @@ const Careers: React.FC = () => {
         {jobListings.map((job) => (
           <div
             key={job.id}
-            className="bg-white p-4 rounded-lg shadow-md"
+            className="bg-[#EDEADE] p-4 rounded-lg shadow-md"
             onClick={() => toggleDetails(job)}
           >
             <div className="flex justify-between items-center cursor-pointer">
@@ -461,9 +461,9 @@ const Careers: React.FC = () => {
               </div>
               <button className="text-blue-500 hover:underline">
                 {selectedJob?.id === job.id ? (
-                  <IoIosArrowUp />
+                  <IoIosArrowUp className="text-xl"/>
                 ) : (
-                  <IoIosArrowDown />
+                  <IoIosArrowDown className="text-xl"/>
                 )}
               </button>
             </div>

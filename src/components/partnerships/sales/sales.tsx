@@ -90,17 +90,17 @@ const SalesCard: React.FC<{ card: CardData }> = ({ card }) => {
 const Sales: React.FC = () => {
   return (
     <div className="container-common bg-[#00040f]">
-      <div className="flex flex-col items-center py-24">
-        <h1 className="text-4xl text-white font-bold text-center xl:tracking-wider">
+      <div className="flex flex-col items-center py-16">
+        <h1 className="text-3xl xl:text-4xl text-white font-bold text-center xl:tracking-wider">
           {salesData.title}
         </h1>
         <h3 className="text-2xl text-white text-center font-normal py-4">
           {salesData.subTitle}
         </h3>
-        <p className="text-xl text-white text-center py-4">
+        <p className="text-lg xl:text-xl text-gray-500 text-center py-4">
           {salesData.description1}
         </p>
-        <p className="text-xl text-white text-center py-4 pb-12">
+        <p className="text-lg xl:text-xl text-gray-500 text-center py-4 pb-12">
           {salesData.description2}
         </p>
         <div className="flex flex-col items-center space-y-8">

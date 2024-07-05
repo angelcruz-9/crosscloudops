@@ -68,7 +68,7 @@ const NavigationItem: React.FC<{
             animate={{ opacity: 1, height: '300px', y: 0 }}
             exit={{ opacity: 0, height: 0, y: -20 }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="sub-items fixed top-24 left-0 w-full bg-[#060606] shadow-lg p-6 xl:p-12 overflow-y-auto z-50"
+            className="sub-items fixed top-30 xl:top-24 left-0 w-full bg-[#060606] shadow-lg p-6 xl:p-12 overflow-y-auto z-50"
           >
             <div className="container mx-auto flex flex-col xl:flex-row justify-between items-center">
               <div className="w-full xl:w-[35%]">

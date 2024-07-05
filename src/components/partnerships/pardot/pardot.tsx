@@ -30,9 +30,9 @@ const cardsData = [
 
 const Pardot: React.FC = () => {
   return (
-      <div className="flex flex-col items-center py-24">
-        <h1 className="text-4xl font-bold text-white mx-auto px-6">Pardot Implementation</h1>
-        <p className="text-xl text-center py-10 text-white mx-auto">
+      <div className="flex flex-col items-center py-16">
+        <h1 className="text-3xl xl:text-4xl font-bold text-white mx-auto px-6">Pardot Implementation</h1>
+        <p className="text-xl text-center text-gray-500 py-10  mx-auto">
           Our B2B strategies excel across verticals, making your Pardot
           Implementation the most effective it can be.
         </p>

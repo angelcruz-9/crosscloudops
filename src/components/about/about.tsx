@@ -30,8 +30,8 @@ const AboutUs: React.FC = () => {
   return (
     <div className="container-common">
       <div className="flex flex-col items-center py-24">
-        <h1 className="text-4xl font-bold text-white">{aboutData.title}</h1>
-        <p className="text-xl text-center py-10 text-white">{aboutData.description}</p>
+        <h1 className="text-3xl xl:text-4xl  text-center font-bold text-white">{aboutData.title}</h1>
+        <p className="text-xl text-center py-10 text-gray-500">{aboutData.description}</p>
         <Card cards={aboutData.cardsData} />
       </div>
     </div>

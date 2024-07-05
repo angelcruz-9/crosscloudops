@@ -1,5 +1,7 @@
 import React from "react";
 import { SignupFormDemo } from "./signupform/signupForm";
+import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
+
 
 const ContactUs: React.FC = () => {
   return (
@@ -23,10 +25,13 @@ const ContactUs: React.FC = () => {
             <label className="text-orange-400">Email :</label>
             <p className="text-white">info@crosscloudops.com</p>
           </div>
-          <div className="relative py-8 w-44 cursor-pointer">
-            <div className="border b-white p-1 rounded-lg">
-              <div className="bg-orange-400 rounded-lg hover:bg-orange-600">
-                <h2 className="text-white text-center text-xl text-semibold p-1">Schedule a Demo</h2>
+          <div className="relative py-8 w-52 cursor-pointer">
+            <div className="border b-white p-1 rounded-full">
+              <div className="bg-orange-400 rounded-full hover:bg-orange-600">
+                <h2 className="text-white text-center flex justify-center items-center text-xl text-semibold p-1">
+                <span><MdOutlineKeyboardDoubleArrowRight className="text-2xl"/></span>
+                  Schedule a Demo
+                  </h2>
               </div>
             </div>
           </div>
