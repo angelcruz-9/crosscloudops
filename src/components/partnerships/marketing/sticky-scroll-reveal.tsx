@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useMemo } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "../.././../utils/cn";
@@ -15,7 +15,7 @@ export const StickyScroll = ({
   }[];
   contentClassName?: string;
 }) => {
-  const [activeCard, setActiveCard] = React.useState(0);
+  const [activeCard, setActiveCard] = useState(0);
   const ref = useRef<any>(null);
   const { scrollYProgress } = useScroll({
     // uncomment line 22 and comment line 23 if you DONT want the overflow container and want to have it change on the entire page scroll
@@ -40,16 +40,18 @@ export const StickyScroll = ({
     setActiveCard(closestBreakpointIndex);
   });
 
-  const backgroundColors = [
-    "var(--slate-900)",
-    "var(--black)",
-    "var(--neutral-900)",
-  ];
-  const linearGradients = [
-    "linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))",
-    "linear-gradient(to bottom right, var(--pink-500), var(--indigo-500))",
-    "linear-gradient(to bottom right, var(--orange-500), var(--yellow-500))",
-  ];
+  const backgroundColors = useMemo(
+    () => ["var(--slate-900)", "var(--black)", "var(--neutral-900)"],
+    []
+  );
+  const linearGradients = useMemo(
+    () => [
+      "linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))",
+      "linear-gradient(to bottom right, var(--pink-500), var(--indigo-500))",
+      "linear-gradient(to bottom right, var(--orange-500), var(--yellow-500))",
+    ],
+    []
+  );
 
   const [backgroundGradient, setBackgroundGradient] = useState(
     linearGradients[0]
@@ -57,7 +59,7 @@ export const StickyScroll = ({
 
   useEffect(() => {
     setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
-  }, [activeCard]);
+  }, [activeCard, linearGradients]);
 
   return (
     <motion.div
@@ -99,7 +101,7 @@ export const StickyScroll = ({
         </div>
       </div>
       <div
-        // style={{ background: backgroundGradient }}
+        style={{ background: backgroundGradient }}
         className={cn(
           "h-60 w-80 rounded-md bg-white sticky top-10 overflow-hidden",
           contentClassName

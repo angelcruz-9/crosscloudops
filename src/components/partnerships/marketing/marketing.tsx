@@ -1,5 +1,4 @@
 import React from "react";
-import CarouselCard from "../../ui-components/caroselCard/caroselCard";
 import { StickyScroll } from "./sticky-scroll-reveal";
 
 const cardData = [
