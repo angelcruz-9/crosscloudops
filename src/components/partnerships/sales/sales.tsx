@@ -1,17 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FiCheckCircle } from "react-icons/fi";
+import SalesCard from "./salesCard";
 
-interface SubItem {
-  text: string;
-}
-
-interface CardData {
-  title: string;
-  description: string;
-  description1?: string;
-  subItems: SubItem[];
-}
 
 const salesData = {
   title: "A 5-Star Salesforce Partner",
@@ -59,58 +49,37 @@ const salesData = {
   ],
 };
 
-const SalesCard: React.FC<{ card: CardData }> = ({ card }) => {
+const FuturisticListView: React.FC = () => {
   return (
-    <motion.div
-      className="bg-gray-800 p-6 rounded-lg shadow-lg mb-6 w-full max-w-4xl"
-      whileHover={{ scale: 1.05 }}
-      transition={{ duration: 0.3 }}
-    >
-      <h2 className="text-2xl font-bold text-white mb-4">{card.title}</h2>
-      <p className="text-lg text-white mb-4">{card.description}</p>
-      {card.description1 && <p className="text-lg text-white mb-4">{card.description1}</p>}
-      <ul className="list-none space-y-2">
-        {card.subItems.map((item, index) => (
-          <motion.li
-            key={index}
-            className="flex items-center text-lg text-white"
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: index * 0.1 }}
-          >
-            <FiCheckCircle className="text-green-500 mr-2" />
-            {item.text}
-          </motion.li>
-        ))}
-      </ul>
-    </motion.div>
-  );
-};
-
-const Sales: React.FC = () => {
-  return (
-    <div className="container-common bg-[#00040f]">
-      <div className="flex flex-col items-center py-16">
-        <h1 className="text-3xl xl:text-4xl text-white font-bold text-center xl:tracking-wider">
-          {salesData.title}
-        </h1>
-        <h3 className="text-2xl text-white text-center font-normal py-4">
-          {salesData.subTitle}
-        </h3>
-        <p className="text-lg xl:text-xl text-gray-500 text-center py-4">
-          {salesData.description1}
-        </p>
-        <p className="text-lg xl:text-xl text-gray-500 text-center py-4 pb-12">
-          {salesData.description2}
-        </p>
-        <div className="flex flex-col items-center space-y-8">
-          {salesData.cardData.map((card, index) => (
-            <SalesCard card={card} key={index} />
-          ))}
-        </div>
+    <div className="container mx-auto px-4 py-16">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold text-white mb-6">{salesData.title}</h1>
+        <h3 className="text-2xl text-white mb-4">{salesData.subTitle}</h3>
+        <p className="text-lg text-gray-400 mb-8">{salesData.description1}</p>
+        <p className="text-lg text-gray-400 mb-12">{salesData.description2}</p>
       </div>
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 cursor-pointer"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0, scale: 0.8 },
+          visible: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+              delayChildren: 0.3,
+              staggerChildren: 0.2,
+            },
+          },
+        }}
+      >
+        {salesData.cardData.map((card, index) => (
+          <SalesCard card={card} key={index} />
+        ))}
+      </motion.div>
     </div>
   );
 };
 
-export default Sales;
+export default FuturisticListView;

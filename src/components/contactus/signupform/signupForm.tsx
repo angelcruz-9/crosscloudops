@@ -1,33 +1,139 @@
-"use client";
-import React from "react";
+import React, { useState } from "react";
 import { Label } from "./label";
 import { Input } from "./input";
 import { cn } from "../../../utils/cn";
 
-
 export function SignupFormDemo() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Form submitted");
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    message: "",
+  });
+
+  const [emailError, setEmailError] = useState(false);
+
+  const handleChange = (e: any) => {
+    const { id, value } = e.target;
+    setFormData({ ...formData, [id]: value });
+    if (id === "email") {
+      setEmailError(!IsEmail(value));
+    }
   };
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    if (validateForm()) {
+      saveContactDetails();
+    }
+  };
+
+  const validateForm = () => {
+    if (!formData.firstName.trim()) {
+      alert("Please enter First Name");
+      return false;
+    }
+    if (!formData.lastName.trim()) {
+      alert("Please enter Last Name");
+      return false;
+    }
+    if (!formData.email.trim()) {
+      alert("Please enter Email");
+      return false;
+    }
+    if (!IsEmail(formData.email)) {
+      alert("Please enter a valid Email");
+      return false;
+    }
+    return true;
+  };
+
+  const IsEmail = (email: any) => {
+    // Updated regular expression with unnecessary escape characters removed
+    var regex = /^([a-zA-Z0-9_.+-])+@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
+  };
+
+  const saveContactDetails = () => {
+    const mailXmlString = `
+      <contactMail>
+        <customerName>${formData.firstName}</customerName>
+        <customerLastName>${formData.lastName}</customerLastName>
+        <email>${formData.email}</email>
+        <phoneNumber>${formData.phoneNumber}</phoneNumber>
+        <msg>${formData.message}</msg>
+      </contactMail>
+    `;
+    console.log(mailXmlString);
+
+    fetch("https://crosscloudops.com/Mail/services/mailsending/contactmail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/xml",
+      },
+      body: mailXmlString,
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        if (json.Response.status === "MailSent") {
+          alert("Contact Sent Successfully...");
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            phoneNumber: "",
+            message: "",
+          });
+          // Redirect or handle success state
+        }
+      })
+      .catch((error) => console.error("Error sending contact mail:", error));
+  };
+
   return (
     <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input">
       <form className="my-8" onSubmit={handleSubmit}>
-          <LabelInputContainer className="mb-4">
-            <Label htmlFor="firstname">First name</Label>
-            <Input id="firstname" placeholder="Tyler" type="text" />
-          </LabelInputContainer>
-          <LabelInputContainer className="mb-4">
-            <Label htmlFor="lastname">Last name</Label>
-            <Input id="lastname" placeholder="Durden" type="text" />
-          </LabelInputContainer>
+        <LabelInputContainer className="mb-4">
+          <Label htmlFor="firstname">First name</Label>
+          <Input
+            id="firstName"
+            placeholder="Tyler"
+            type="text"
+            value={formData.firstName}
+            onChange={handleChange}
+          />
+        </LabelInputContainer>
+        <LabelInputContainer className="mb-4">
+          <Label htmlFor="lastname">Last name</Label>
+          <Input
+            id="lastName"
+            placeholder="Durden"
+            type="text"
+            value={formData.lastName}
+            onChange={handleChange}
+          />
+        </LabelInputContainer>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="email">Email Address</Label>
-          <Input id="email" placeholder="projectmayhem@fc.com" type="email" />
+          <Input
+            id="email"
+            placeholder="projectmayhem@fc.com"
+            type="email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+          {emailError && <p className="text-red-500">Please enter a valid email address</p>}
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="number">Phone Number</Label>
-          <Input id="phone number" placeholder="" type="number" />
+          <Input
+            id="phoneNumber"
+            placeholder=""
+            type="tel"
+            value={formData.phoneNumber}
+            onChange={handleChange}
+          />
         </LabelInputContainer>
         <LabelInputContainer className="mb-8">
           <Label htmlFor="textarea">Message</Label>
@@ -36,6 +142,8 @@ export function SignupFormDemo() {
             placeholder=""
             type="textarea"
             className="h-24"
+            value={formData.message}
+            onChange={handleChange}
           />
         </LabelInputContainer>
 
@@ -46,7 +154,6 @@ export function SignupFormDemo() {
           Submit &rarr;
           <BottomGradient />
         </button>
-
       </form>
     </div>
   );
@@ -68,9 +175,5 @@ const LabelInputContainer = ({
   children: React.ReactNode;
   className?: string;
 }) => {
-  return (
-    <div className={cn("flex flex-col space-y-2 w-full", className)}>
-      {children}
-    </div>
-  );
+  return <div className={cn("flex flex-col space-y-2 w-full", className)}>{children}</div>;
 };

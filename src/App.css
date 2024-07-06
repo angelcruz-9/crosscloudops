@@ -13,6 +13,35 @@
     transition: transform 0.3s ease-in-out;
   }
   
+/* circuit animation */
+  
 
+.connection-lines {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .connection-line {
+    stroke: #ffffff;
+    stroke-width: 2;
+    fill: transparent;
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: drawLine 2s ease forwards;
+  }
+  
+  @keyframes drawLine {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  .cards-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
   
 

@@ -79,7 +79,7 @@ export const InfiniteMovingCards = ({
           const imageUrl = `${process.env.PUBLIC_URL}${card.image}`;
           return (
             <li
-              className="w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6 md:w-[450px] cursor-pointer"
+              className="w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6 md:w-[450px] cursor-pointer transition-transform duration-300 ease-in-out transform hover:-translate-y-2"
               style={{
                 background:
                   "linear-gradient(180deg, var(--slate-800), var(--slate-900))",
