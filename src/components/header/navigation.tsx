@@ -21,14 +21,14 @@ const navItems: NavItem[] = [
   { name: "About Us", link: "/#aboutus" },
   {
     name: "Technologies",
-    link: "/#salesforce",
+    link: "/salesforce",
     subItems: [
       {
         Title: "Technology Platforms",
         items: [
           { name: "Cloud Solutions(Azure,AWS)", link: "#" },
           { name: "Oracle", link: "#" },
-          { name: "Salesforce", link: "/#salesforce" },
+          { name: "Salesforce", link: "/salesforce" },
         ],
       },
       {
@@ -82,7 +82,7 @@ const Navigation: React.FC = () => {
   return (
     <div
       className={`${
-        isScrolled ? "shadow-lg bg-slate-900 bg-opacity-100" : "bg-transparent"
+        isScrolled ? "shadow-lg bg-[#0B0A0C]" : "bg-transparent"
       } fixed top-0 left-0 right-0 z-50`}
     >
       <div className="container-common flex justify-between items-center py-8">

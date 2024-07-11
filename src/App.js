@@ -7,6 +7,7 @@ import ContactUs from './components/contactus/contactus';
 import Home from './components/home/home';
 import NotFound from './components/NotFound/notFound';
 import Layout from './components/layout';
+import SalesForceMain from './components/salesforce/salesforce';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/crosscloudops" element={<Home />} />
+          <Route path="/salesforce" element={<SalesForceMain />} />
           <Route path="/services" element={<Services />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/contactus" element={<ContactUs />} />

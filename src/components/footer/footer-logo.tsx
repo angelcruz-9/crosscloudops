@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const logos = [
   "/assets/acquia-footer.png",
-  "/assets/aws-footer.jpeg",
+  "/assets/aws-footer.png",
   "/assets/azure-footer.png",
   "/assets/freshworks-footer.png",
   "/assets/gcp-footer.png",
@@ -28,7 +28,7 @@ const FooterLogo: React.FC = () => {
   };
 
   return (
-    <footer className="container-common py-6 overflow-hidden">
+    <footer className="container-common py-32 overflow-hidden">
       <div className="flex justify-center items-center overflow-hidden whitespace-nowrap">
         <motion.div className="flex" {...animation}>
           {logos.map((logo, index) => (

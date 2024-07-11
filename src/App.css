@@ -13,12 +13,41 @@
   .vertical-timeline-element-content{
     width: 100%;
   }
-  
+}
+
+.highlighted-gradient {
+  background: linear-gradient(90deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .nav-items-mobile .nav-items {
     transition: transform 0.3s ease-in-out;
   }
+
+ .aboutus{
+  background-image: url('/public/assets/circle.svg');
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: auto;
+  /* animation: rotate 50s linear infinite;; */
+} 
+
+
+@media only screen and (max-width: 640px) {
+  .aboutus{
+    background-image: none !important;
+  }
+}
+
+.elementor-background-overlay {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
   
 /* circuit animation */
   
@@ -59,11 +88,50 @@
       transform: rotate(360deg);
     }
   }
+
   
-  .rotating-image {
-    animation: rotate 50s linear infinite; /* Adjust duration and timing function as needed */
+  .tab{
+    border: 2px solid rgb(39, 38, 38);
+    opacity: .7;
+    color: #fff;
+    background-color: rgba(26, 70, 81, .4);
+    border-radius: 2px;
+    flex: 1;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .tab.active {
+    border-bottom-width: 3px;
+    border-bottom-color: rgb(166, 240, 166);
+    opacity: 1;
+    color: rgb(166, 240, 166);
+    background-color: rgba(26, 70, 81, 0.4);
+    flex: 1;
+  }
+
+  .timeline-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(to bottom, #9c4c9f, #006d3d);
   }
   
+  .timeline-card {
+    position: relative;
+    z-index: 100;
+    left: -10px;
+    background-color: #0B0A0C;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.5s ease-in-out;
+  }
   
+  .timeline-card.active {
+    transform: scale(1.05);
+    opacity: 1;
+  }
 
   

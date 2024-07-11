@@ -21,8 +21,8 @@ const cardsData = [
 
 const SalesForce: React.FC = () => {
   return (
-    <div className="container-common">
-      <div className="flex flex-col items-center py-16">
+    <div className="px-4 xl:px-12">
+      <div className="flex flex-col items-center py-8 xl:py-16">
         <h1 className=" text-3xl xl:text-4xl text-left md:text-center font-bold text-white pb-12">Salesforce Integration</h1>
         <Card cards={cardsData} />
       </div>

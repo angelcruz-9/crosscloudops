@@ -30,7 +30,7 @@ const navItems: NavItem[] = [
 
 const Footer: React.FC = () => {
   return (
-    <div className="bg-slate-950">
+    <div className="bg-[#0B0A0C] relative z-30">
       <div className="container-common">
         <div className="flex flex-col xl:flex-row justify-between py-8 border-b border-gray-600">
           <div className="flex flex-col w-full xl:w-1/2">
@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
               <img src={`${process.env.PUBLIC_URL}/assets/logos.webp`} alt="logo" className="w-10 h-10" />
               <h2 className="text-2xl font-normal ml-2 text-white">Cross Cloud Ops</h2>
             </div>
-            <p className="text-gray-500 text-lg mt-2">
+            <p className="text-gray-500 text-lg leading-8 font-normal mt-2">
               Cross Cloud Ops helps our customers integrate and optimize
               Salesforce Marketing Cloud. A Salesforce Partner, our certified,
               knowledgeable experts enable rapid adoption of Salesforce
@@ -46,19 +46,19 @@ const Footer: React.FC = () => {
             </p>
           </div>
           <div className="flex flex-col mt-4">
-            <h2 className="text-2xl font-semibold text-white">Quick Links</h2>
+            <h2 className="text-2xl font-semibold text-[#ffffff]">Quick Links</h2>
             {navItems.map((item, index) => (
               <a
                 href={item.link}
                 key={index}
-                className="text-gray-500 text-md mt-2 hover:text-gray-300"
+                className=" text-gray-500 leading-7 font-normal text-md mt-2 hover:text-orange-500"
               >
                 {item.name}
               </a>
             ))}
           </div>
         </div>
-        <p className="py-4 text-center tracking-wide text-gray-500">Copyright © All Rights Reserved | Privacy Policy</p>
+        <p className="py-4 text-center leading-7 text-lg font-normal tracking-wide text-[#ffffff]">Copyright © All Rights Reserved | Privacy Policy</p>
       </div>
     </div>
   );

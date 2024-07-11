@@ -13,7 +13,7 @@ interface CardProps {
 const CardImage: React.FC<CardProps> = ({ imageSrc, title, description, linkUrl, linkText }) => {
   return (
     <motion.div
-      className="max-w-sm rounded overflow-hidden shadow-lg border"
+      className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-[#141414] border-0"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       initial={{ opacity: 0, y: 20 }}
@@ -33,7 +33,7 @@ const CardImage: React.FC<CardProps> = ({ imageSrc, title, description, linkUrl,
         >
           {title}
         </motion.div>
-        <motion.p className="text-base text-white"
+        <motion.p className="text-base text-gray-400"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { delay: 0.6, duration: 0.8 } }}
         >

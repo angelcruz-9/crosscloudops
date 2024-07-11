@@ -1,7 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
-import SalesCard from "./salesCard";
-
+import React, { useState } from "react";
+import { FiCheckCircle } from "react-icons/fi";
 
 const salesData = {
   title: "A 5-Star Salesforce Partner",
@@ -50,34 +48,55 @@ const salesData = {
 };
 
 const FuturisticListView: React.FC = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleCardClick = (index: number) => {
+    setActiveIndex(index);
+  };
+
   return (
-    <div className="container mx-auto px-4 py-16">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold text-white mb-6">{salesData.title}</h1>
+    <div className="container mx-auto px-4 py-16 pt-44">
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-bold text-white mb-6">
+          {salesData.title}
+        </h1>
         <h3 className="text-2xl text-white mb-4">{salesData.subTitle}</h3>
         <p className="text-lg text-gray-400 mb-8">{salesData.description1}</p>
         <p className="text-lg text-gray-400 mb-12">{salesData.description2}</p>
       </div>
-      <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 cursor-pointer"
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: { opacity: 0, scale: 0.8 },
-          visible: {
-            opacity: 1,
-            scale: 1,
-            transition: {
-              delayChildren: 0.3,
-              staggerChildren: 0.2,
-            },
-          },
-        }}
-      >
+      <div className="flex flex-col xl:flex-row justify-center xl:space-x-4 mb-12">
         {salesData.cardData.map((card, index) => (
-          <SalesCard card={card} key={index} />
+          <h2
+            key={index}
+            className={`text-xl text-center font-bold cursor-pointer tab ${
+              index === activeIndex ? "text-blue-500 active" : "text-gray-300"
+            }`}
+            onClick={() => handleCardClick(index)}
+          >
+            {card.title}
+          </h2>
         ))}
-      </motion.div>
+      </div>
+      <div className="flex flex-col xl:flex-row justify-start items-center">
+        <div className="flex flex-col w-full xl:w-1/2">
+          <p className="text-lg text-white mb-4">
+            {salesData.cardData[activeIndex].description}
+          </p>
+          {salesData.cardData[activeIndex].description1 && (
+            <p className="text-lg text-white mb-4">
+              {salesData.cardData[activeIndex].description1}
+            </p>
+          )}
+        </div>
+        <ul className="text-lg text-gray-400 list-none list-inside xl:pl-8">
+          {salesData.cardData[activeIndex].subItems.map((item, idx) => (
+            <div className="flex items-center mb-2">
+            <FiCheckCircle className="text-green-500 mr-2" aria-hidden="true" />
+            <li key={idx}>{item.text}</li>
+            </div>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

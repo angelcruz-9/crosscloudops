@@ -1,24 +1,24 @@
 import React from 'react';
 import AboutUs from '../about/about';
+// import FooterLogo from '../footer/footer-logo';
 import Header from '../header/header';
-import SalesForceMain from '../salesforce/salesforce';
+// import NumberSections from '../partnerships/countSection/countSection';
 import useScrollToHash from './useScrollToHash';
 
 const Home = () => {
   useScrollToHash();
 
   return (
-    <div>
-       <section id="home">
+    <>
+       <section id="home" >
         <Header />
       </section> 
       <section id="aboutus">
         <AboutUs />
       </section>
-      <section id='salesforce'>
-      <SalesForceMain />
-      </section>
-    </div>
+      {/* <NumberSections />
+      <FooterLogo /> */}
+    </>
   );
 };
 

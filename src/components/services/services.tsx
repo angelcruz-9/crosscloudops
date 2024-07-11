@@ -47,13 +47,21 @@ const cardsData = [
 const Services: React.FC = () => {
   return (
     <div className="flex flex-col items-center py-24">
-      <div className="w-full h-52 bg-gradient-to-r from-purple-300 to-indigo-400">
+      <div className="w-full h-56 relative">
+        <video
+          className="absolute top-0 left-0 w-full h-full object-cover z-60 opacity-30"
+          src={`${process.env.PUBLIC_URL}/assets/services.mp4`}
+          autoPlay
+          loop
+          muted
+          playsInline
+        ></video>
         <div className="container-common">
-          <h1 className="text-4xl font-bold text-black py-20">Services</h1>
+          <h1 className="text-5xl font-bold text-white py-20">Services</h1>
         </div>
       </div>
       <div className="container-common">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           {cardsData.map((item, index) => (
             <CardImage
               key={index}
