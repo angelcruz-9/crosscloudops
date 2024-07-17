@@ -8,6 +8,9 @@ import Home from './components/home/home';
 import NotFound from './components/NotFound/notFound';
 import Layout from './components/layout';
 import SalesForceMain from './components/salesforce/salesforce';
+import CloudSolutions from './components/cloudsolutions/cloudsolutions';
+import OracleServices from './components/oracle/oracle';
+import DataAnalaytics from './components/dataanalytics/dataanalytics';
 
 function App() {
   return (
@@ -17,6 +20,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/crosscloudops" element={<Home />} />
           <Route path="/salesforce" element={<SalesForceMain />} />
+          <Route path="/cloudsolutions" element={<CloudSolutions />} />
+          <Route path="/oracle" element={<OracleServices />} />
+          <Route path='/dataanalytics' element={<DataAnalaytics />} />
           <Route path="/services" element={<Services />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/contactus" element={<ContactUs />} />

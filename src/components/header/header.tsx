@@ -35,7 +35,7 @@ const Header: React.FC = () => {
           </p>
         </div>
         <video
-          className="absolute top-0 left-0 w-full h-full object-cover z-60 opacity-30"
+          className="absolute top-0 left-0 w-full h-full object-cover z-60 opacity-90"
           src={`${process.env.PUBLIC_URL}/assets/header.mp4`}
           autoPlay
           loop

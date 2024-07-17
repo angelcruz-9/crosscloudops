@@ -82,7 +82,7 @@ export const InfiniteMovingCards = ({
               className="w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6 md:w-[450px] cursor-pointer transition-transform duration-300 ease-in-out transform hover:-translate-y-2"
               style={{
                 background:
-                  "#141414",
+                  "#2E2E2E",
               }}
               key={idx}
             >
@@ -96,10 +96,10 @@ export const InfiniteMovingCards = ({
                 />
               </div>
               <div className="py-8">
-                <h3 className="text-xl font-semibold text-center text-white mb-2">
+                <h3 className="text-[24px] leading-6 font-semibold text-center text-white mb-2">
                   {card.title}
                 </h3>
-                <p className="text-gray-500 text-sm text-center">{card.description}</p>
+                <p className="text-white text-[16px] text-center">{card.description}</p>
               </div>
             </li>
           );

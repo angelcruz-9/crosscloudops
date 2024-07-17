@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Timeline from "./timeline";
 
 const aboutData = {
@@ -7,8 +8,8 @@ const aboutData = {
     <p>
       Our tailored solutions to customer experience with cloud-based exceed
       industry standards and drive rapid growth. Fast-forward to success with
-      our robust marketing solutions and integrate multiple clouds Seamlessly.{" "}
-      <a href="/#salesforce" className="text-blue-500	hover:text-blue-700">
+      our robust marketing solutions and integrate multiple clouds seamlessly.{" "}
+      <a href="/#salesforce" className="text-blue-500 hover:text-blue-700">
         Learn More
       </a>
     </p>
@@ -44,19 +45,29 @@ const aboutData = {
 
 const AboutUs: React.FC = () => {
   return (
-    <div className="aboutus py-12 xl:py-24">
-      <div className="elementor-background-overlay"></div>
+    <div className="aboutus py-12 xl:py-24 relative overflow-hidden">
       <div className="container-common relative flex flex-col z-10">
-        <div className="flex flex-col">
-          <h1 className="text-3xl xl:text-5xl xl:leading-[76.8px] text-center xl:text-left font-semibold text-white">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+        >
+          <h1 className="text-3xl xl:text-5xl text-center xl:text-left font-semibold text-white">
             {aboutData.title}
           </h1>
-          <p className="text-xl text-center xl:text-left py-10 w-full xl:w-2/3 text-gray-400">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
+        >
+          <p className="text-[18px] leading-8 text-center xl:text-left py-10 w-full xl:w-2/3 text-white">
             {aboutData.description}
           </p>
-        </div>
+        </motion.div>
         <Timeline timeline={aboutData.cardsData} />
       </div>
+      <img src={`${process.env.PUBLIC_URL}/assets/circle.svg`} alt="Circle" className="rotating-img absolute right-0 top-48 hidden xl:block"/>
     </div>
   );
 };

@@ -28,7 +28,7 @@ const Card: React.FC<CardProps> = ({ cards }) => {
             transition={{ duration: 0.3 }}
             style={{
               borderRadius: "20px",
-              backgroundColor: "#141414"
+              backgroundColor: "#2E2E2E"
             }}
           >
             <div className="flex justify-center absolute left-[40%] xl:left-[45%] -top-8 items-center bg-orange-400 w-16 h-16 p-4 rounded-full mx-auto">
@@ -41,10 +41,10 @@ const Card: React.FC<CardProps> = ({ cards }) => {
               />
             </div>
             <div className="py-8">
-              <h3 className="text-2xl font-semibold text-center text-[#ffffff] mb-2">
+              <h3 className="text-[24px] font-semibold text-center text-[#ffffff] mb-2">
                 {card.title}
               </h3>
-              <p className="text-md text-center text-gray-400">{card.description}</p>
+              <p className="text-[16px] leading-6 text-center text-white">{card.description}</p>
             </div>
           </motion.div>
         );

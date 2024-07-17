@@ -49,7 +49,7 @@ const Services: React.FC = () => {
     <div className="flex flex-col items-center py-24">
       <div className="w-full h-56 relative">
         <video
-          className="absolute top-0 left-0 w-full h-full object-cover z-60 opacity-30"
+          className="absolute top-0 left-0 w-full h-full object-cover z-60 opacity-60"
           src={`${process.env.PUBLIC_URL}/assets/services.mp4`}
           autoPlay
           loop

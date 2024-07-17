@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 interface CardData {
   title: string;
@@ -54,27 +55,33 @@ const Timeline: React.FC<TimelineProps> = ({ timeline }) => {
         style={{ height: `${lineHeight}px`, width: "4px" }}
       ></div>
       {timeline.map((card, index) => (
-        <div
+        <motion.div
           key={index}
           ref={(el) => (timelineRefs.current[index] = el)}
           className={`timeline-card mb-8 p-4 w-full xl:w-2/3 ${
             index === activeIndex ? "" : ""
           }`}
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: index <= activeIndex ? 1 : 0.5, x: index <= activeIndex ? 0 : -100 }}
+          transition={{ duration: 0.5, delay: index * 0.2 }}
         >
-          <div
+          <motion.div
             className={`p-2 rounded-full text-center absolute -left-[64px] top-4 transition-all duration-500 ${
               index <= activeIndex
-                ? "bg-[#E72162] shadow-lg"
+                ? "bg-orange-500 shadow-lg"
                 : "bg-gray-700"
             }`}
+            initial={{ scale: 0 }}
+            animate={{ scale: index <= activeIndex ? 1 : 0.8 }}
+            transition={{ duration: 0.5 }}
           >
             <span className="timeline-icon">{card.icon}</span>
-          </div>
+          </motion.div>
           <div className="flex flex-col items-start mb-4">
-            <h3 className={`text-2xl  font-bold ${index <= activeIndex ? "text-[#E72162]" : "text-white"}`}>{card.title}</h3>
-            <p className="text-md text-gray-400 pt-8">{card.desc}</p>
+            <h3 className={`text-[24px] font-bold ${index <= activeIndex ? "text-orange-500" : "text-white"}`}>{card.title}</h3>
+            <p className="text-[18px] leading-7 text-white pt-8">{card.desc}</p>
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );

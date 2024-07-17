@@ -57,18 +57,18 @@ const FuturisticListView: React.FC = () => {
   return (
     <div className="container mx-auto px-4 py-16 pt-44">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-white mb-6">
+        <h1 className="text-[40px] leading-8 font-bold text-white mb-6">
           {salesData.title}
         </h1>
-        <h3 className="text-2xl text-white mb-4">{salesData.subTitle}</h3>
-        <p className="text-lg text-gray-400 mb-8">{salesData.description1}</p>
-        <p className="text-lg text-gray-400 mb-12">{salesData.description2}</p>
+        <h3 className="text-[20px] leading-8 text-white mb-4">{salesData.subTitle}</h3>
+        <p className="text-[20px] leading-8 text-white mb-8">{salesData.description1}</p>
+        <p className="text-[20px] leading-8 text-white mb-12">{salesData.description2}</p>
       </div>
       <div className="flex flex-col xl:flex-row justify-center xl:space-x-4 mb-12">
         {salesData.cardData.map((card, index) => (
           <h2
             key={index}
-            className={`text-xl text-center font-bold cursor-pointer tab ${
+            className={`text-[28px] text-center font-bold cursor-pointer tab ${
               index === activeIndex ? "text-blue-500 active" : "text-gray-300"
             }`}
             onClick={() => handleCardClick(index)}
@@ -79,19 +79,19 @@ const FuturisticListView: React.FC = () => {
       </div>
       <div className="flex flex-col xl:flex-row justify-start items-center">
         <div className="flex flex-col w-full xl:w-1/2">
-          <p className="text-lg text-white mb-4">
+          <p className="text-[18px] leading-7 text-white mb-4">
             {salesData.cardData[activeIndex].description}
           </p>
           {salesData.cardData[activeIndex].description1 && (
-            <p className="text-lg text-white mb-4">
+            <p className="text-[18px] leading-7 text-white mb-4">
               {salesData.cardData[activeIndex].description1}
             </p>
           )}
         </div>
-        <ul className="text-lg text-gray-400 list-none list-inside xl:pl-8">
+        <ul className="text-lg text-white list-none list-inside xl:pl-8">
           {salesData.cardData[activeIndex].subItems.map((item, idx) => (
             <div className="flex items-center mb-2">
-            <FiCheckCircle className="text-green-500 mr-2" aria-hidden="true" />
+            <FiCheckCircle className="text-orange-500 mr-2" aria-hidden="true" />
             <li key={idx}>{item.text}</li>
             </div>
           ))}

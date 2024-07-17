@@ -449,7 +449,7 @@ const Careers: React.FC = () => {
         {jobListings.map((job) => (
           <div
             key={job.id}
-            className="bg-[#EDEADE] p-4 rounded-lg shadow-md"
+            className="bg-[#ccc] p-4 rounded-lg shadow-md"
             onClick={() => toggleDetails(job)}
           >
             <div className="flex justify-between items-center cursor-pointer">

@@ -26,8 +26,8 @@ const navItems: NavItem[] = [
       {
         Title: "Technology Platforms",
         items: [
-          { name: "Cloud Solutions(Azure,AWS)", link: "#" },
-          { name: "Oracle", link: "#" },
+          { name: "Cloud Solutions(Azure,AWS)", link: "/cloudsolutions" },
+          { name: "Oracle", link: "/oracle" },
           { name: "Salesforce", link: "/salesforce" },
         ],
       },
@@ -35,7 +35,7 @@ const navItems: NavItem[] = [
         Title: "Technology Expertise",
         items: [
           { name: "Artificial Intelligence (AI)", link: "#" },
-          { name: "Data Analysis", link: "#" },
+          { name: "Data Analysis", link: "/dataanalytics" },
           { name: "CRM Consulting", link: "#" },
         ],
       },
@@ -82,7 +82,7 @@ const Navigation: React.FC = () => {
   return (
     <div
       className={`${
-        isScrolled ? "shadow-lg bg-[#0B0A0C]" : "bg-transparent"
+        isScrolled ? "shadow-lg bg-[#000000]" : "bg-transparent"
       } fixed top-0 left-0 right-0 z-50`}
     >
       <div className="container-common flex justify-between items-center py-8">
