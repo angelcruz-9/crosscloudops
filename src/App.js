@@ -11,6 +11,12 @@ import SalesForceMain from './components/salesforce/salesforce';
 import CloudSolutions from './components/cloudsolutions/cloudsolutions';
 import OracleServices from './components/oracle/oracle';
 import DataAnalaytics from './components/dataanalytics/dataanalytics';
+import CRMConsulting from './components/crmconsulting/crmconsulting';
+import AI from './components/artificialintelligence/ai';
+import Devops from './components/devops/devops';
+import ITStrategy from './components/itstrategy/itstrategy';
+import SoftwareDelivery from './components/softwaredelivery/softwaredelivery';
+import OutSourcing from './components/outsourcing/outsourcing';
 
 function App() {
   return (
@@ -22,7 +28,13 @@ function App() {
           <Route path="/salesforce" element={<SalesForceMain />} />
           <Route path="/cloudsolutions" element={<CloudSolutions />} />
           <Route path="/oracle" element={<OracleServices />} />
+          <Route path="/artificialintelligence" element={<AI/>} />
           <Route path='/dataanalytics' element={<DataAnalaytics />} />
+          <Route path='/crmconsulting' element={<CRMConsulting />} />
+          <Route path='/devops' element={<Devops />} />
+          <Route path='/itstrategy' element={<ITStrategy />} />
+          <Route path='/softwaredelivery' element={<SoftwareDelivery />}/>
+          <Route path='/outsourcing' element={<OutSourcing />} />
           <Route path="/services" element={<Services />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/contactus" element={<ContactUs />} />

@@ -21,8 +21,9 @@ const cardsData = [
 
 const SalesForce: React.FC = () => {
   return (
-    <div className="px-4 xl:px-12">
-      <div className="flex flex-col items-center py-8 xl:py-16">
+    <div className="px-4 xl:px-12 relative overflow-hidden">
+      <div className="bg-sales-opacity"></div>
+      <div className="flex flex-col relative items-center py-8 xl:py-16">
         <h1 className="text-[32px] xl:text-[40px] text-left md:text-center font-bold text-white pb-12">Salesforce Integration</h1>
         <Card cards={cardsData} />
       </div>

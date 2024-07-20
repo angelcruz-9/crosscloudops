@@ -6,20 +6,20 @@ const cloudData = {
     "Our primary goal is to solve complex business problems, and this theme is woven into our data analytics consulting approach.",
   description: (
     <>
-      <p className="text-[18px] font-normal leading-6 text-white">
+      <p className="text-lg leading-6 text-white">
         Whether crafting your data strategy, building a data warehouse or
         designing a custom solution to meet your unique needs, our consultants
         go beyond building technology.
       </p>
       <br />
-      <p className="text-[18px] font-normal leading-6 text-white">
+      <p className="text-lg leading-6 text-white">
         We take a holistic approach using data to solve business problems and
         capture opportunities. We look at the people, processes and technology
         surrounding data and analytics to deliver insights within the context of
         your business.
       </p>
       <br />
-      <p className="text-[18px] font-normal leading-6 text-white">
+      <p className="text-lg leading-6 text-white">
         High-functioning data and analytics capabilities center around enabling
         the business to ask better questions – and get better answers – with
         consistency, a high degree of trust and timeliness.
@@ -116,8 +116,8 @@ const cloudData = {
 
 const DataAnalaytics: React.FC = () => {
   return (
-    <div className="flex flex-col items-center py-24">
-      <div className="w-full h-56 relative">
+    <div className="flex flex-col overflow-hidden items-center">
+      <div className="w-full h-96 relative">
         <video
           className="absolute top-0 left-0 w-full h-full object-cover z-60 opacity-60"
           src={`${process.env.PUBLIC_URL}/assets/services.mp4`}
@@ -127,24 +127,27 @@ const DataAnalaytics: React.FC = () => {
           playsInline
         ></video>
         <div className="container-common">
-          <h1 className="text-5xl font-bold text-white py-20">
+          <h1 className="text-3xl xl:text-5xl relative z-10 pt-44 font-bold text-white py-20">
             Data Analytics
           </h1>
         </div>
       </div>
-      <div className="container-common py-12">
-        <h2 className="text-[30px] font-bold text-white mb-6">
+      <div className="overflow-hidden relative w-full h-full">
+      <div className="bg-data-opacity"></div>
+      <div className="container-common relative z-10 py-12">
+        <h2 className="text-[18px] font-bold text-white mb-6">
           {cloudData.title}
         </h2>
-        <div className="flex justify-between">
-          <div className="w-1/2">
-            <div>{cloudData.description}</div>
+        <div className="flex flex-col xl:flex-row justify-between">
+          <div className="w-full xl:w-1/2">
+            {cloudData.description}
           </div>
-          <div className="w-1/2 pl-4">{cloudData.imgUrl}</div>
+          <div className="w-full xl:w-1/2 xl:pl-4 pt-4 xl:pt-0">{cloudData.imgUrl}</div>
         </div>
         <div className="container-common py-12">
           <Tabs cards={cloudData.cardData} />
         </div>
+      </div>
       </div>
     </div>
   );

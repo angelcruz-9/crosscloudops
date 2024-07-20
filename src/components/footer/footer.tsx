@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
   return (
     <div className="relative z-30">
       <div className="bg-[#F2F5F7]">
-        <div className="flex container-common flex-col xl:flex-row justify-between py-2">
+        <div className="flex container-common justify-between py-2">
           <div className="flex items-center">
             <a href="https://www.facebook.com/people/Cross-Cloud-Ops/100075985782048/" className="mr-1" target="_blank"  rel="noreferrer">
               <MdOutlineFacebook size={30} className='hover:text-orange-500'/>
@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
               <FaSquareXTwitter size={26} className='hover:text-orange-500'/>
             </a>
           </div>
-          <div className="flex items-center">
+          <div className="flex flex-col xl:flex-row items-center">
             {navItems.map((item, index) => (
               <a
                 href={item.link}

@@ -428,7 +428,7 @@ const Careers: React.FC = () => {
   };
 
   return (
-    <div className="container-common py-24">
+    <div className="container-common relative py-24">
       <div className="flex flex-col items-center">
         <img
           src={`${process.env.PUBLIC_URL}/assets/carrer.png`}
@@ -461,9 +461,9 @@ const Careers: React.FC = () => {
               </div>
               <button className="text-blue-500 hover:underline">
                 {selectedJob?.id === job.id ? (
-                  <IoIosArrowUp className="text-xl"/>
+                  <IoIosArrowUp className="text-xl" />
                 ) : (
-                  <IoIosArrowDown className="text-xl"/>
+                  <IoIosArrowDown className="text-xl" />
                 )}
               </button>
             </div>
@@ -478,9 +478,12 @@ const Careers: React.FC = () => {
                   className="overflow-hidden mt-4"
                 >
                   <div className="text-lg text-[#b7b7b7] p-4">
-                    <h3 className="text-2xl text-black font-semibold mb-4">
-                      {selectedJob.popupTitle}
-                    </h3>
+                    <div className="flex justify-between items-center">
+                      <h3 className="text-2xl text-black font-semibold mb-4">
+                        {selectedJob.popupTitle}
+                      </h3>
+                      <button className="border border-orange-500 bg-orange-500 hover:bg-orange-700 text-black hover:text-white px-6 rounded-lg">Apply</button>
+                    </div>
                     {selectedJob.description}
                   </div>
                 </motion.div>
@@ -489,6 +492,7 @@ const Careers: React.FC = () => {
           </div>
         ))}
       </div>
+
     </div>
   );
 };

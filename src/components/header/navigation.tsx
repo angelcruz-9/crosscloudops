@@ -34,18 +34,18 @@ const navItems: NavItem[] = [
       {
         Title: "Technology Expertise",
         items: [
-          { name: "Artificial Intelligence (AI)", link: "#" },
+          { name: "Artificial Intelligence (AI)", link: "/artificialintelligence" },
           { name: "Data Analysis", link: "/dataanalytics" },
-          { name: "CRM Consulting", link: "#" },
+          { name: "CRM Consulting", link: "/crmconsulting" },
         ],
       },
       {
         Title: "Technology Delivery",
         items: [
-          { name: "Devops", link: "#" },
-          { name: "IT Strategy", link: "#" },
-          { name: "Modern Software Delivery", link: "#" },
-          { name: "Outsourcing", link: "#" },
+          { name: "Devops", link: "/devops" },
+          { name: "IT Strategy", link: "/itstrategy" },
+          { name: "Modern Software Delivery", link: "/softwaredelivery" },
+          { name: "Outsourcing", link: "/outsourcing" },
         ],
       },
     ],

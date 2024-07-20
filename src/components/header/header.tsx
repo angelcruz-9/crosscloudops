@@ -29,13 +29,13 @@ const Header: React.FC = () => {
               Personalized IT Consultancy
             </h3>
           </div>
-          <p className="md:mt-4 text-gray-300 max-w-lg my-2 text-md text-center md:text-left relative z-20">
+          <p className="md:mt-4 text-[#fafafa] max-w-lg my-2 text-lg text-center md:text-left relative z-20">
             Let us build optimized digital experiences to drive your company's
             rapid growth.
           </p>
         </div>
         <video
-          className="absolute top-0 left-0 w-full h-full object-cover z-60 opacity-90"
+          className="absolute top-0 left-0 w-full h-full object-cover z-60 opacity-85"
           src={`${process.env.PUBLIC_URL}/assets/header.mp4`}
           autoPlay
           loop
