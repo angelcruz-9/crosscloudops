@@ -428,28 +428,24 @@ const Careers: React.FC = () => {
   };
 
   return (
-    <div className="container-common relative py-24">
+    <div className="relative overflow-hidden">
+      <div className="bg-career-opacity"></div>
+          <div className="container-common relative py-32 z-10">
       <div className="flex flex-col items-center">
-        <img
-          src={`${process.env.PUBLIC_URL}/assets/carrer.png`}
-          alt="Career"
-          className="w-full h-auto max-h-96 object-contain"
-        />
         <h1 className="text-4xl font-bold text-center text-white">Careers</h1>
         <p className="text-xl py-4 text-white">Work for the Best</p>
-        <p className="text-xl text-[#b7b7b7]">
+        <p className="text-xl text-white">
           Join the quickly developing, experienced global innovator in
           programming quality affirmation and drive your vocation higher than
           ever of progress.
         </p>
       </div>
-
       {/* Job Listings */}
       <div className="grid grid-cols-1 gap-4 mt-8">
         {jobListings.map((job) => (
           <div
             key={job.id}
-            className="bg-[#ccc] p-4 rounded-lg shadow-md"
+            className="bg-white p-4 rounded-lg shadow-md"
             onClick={() => toggleDetails(job)}
           >
             <div className="flex justify-between items-center cursor-pointer">
@@ -493,6 +489,7 @@ const Careers: React.FC = () => {
         ))}
       </div>
 
+    </div>
     </div>
   );
 };
