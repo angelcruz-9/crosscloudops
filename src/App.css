@@ -166,7 +166,7 @@
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 1;
+  opacity: 1.4;
   position: absolute;
   top: 0;
   left: 0;
@@ -192,11 +192,11 @@
 /* sales us css */
 
 .bg-sales-opacity {
-  background-image: url("../public/assets/salesforce-img2-bg.png");
+  background-image: url("../public/assets/salesforce-img2.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 1;
+  opacity: 0.8;
   position: absolute;
   top: 0;
   left: 0;
@@ -207,11 +207,11 @@
 /* pardot us css */
 
 .bg-pardot-opacity {
-  background-image: url("../public/assets/pardot-bg.webp");
+  background-image: url("../public/assets/pardot-bg.avif");
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 1;
+  opacity: 0.9;
   position: absolute;
   top: 0;
   left: 0;
@@ -223,11 +223,11 @@
 /* cloud us css */
 
 .bg-cloud-opacity {
-  background-image: url("../public/assets/aws-bg.jpg");
+  background-image: url("../public/assets/aws-bg.webp");
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 0.3;
+  opacity: 0.6;
   position: absolute;
   top: 0;
   left: 0;
@@ -243,7 +243,7 @@
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 0.4;
+  opacity: 0.6;
   position: absolute;
   top: 0;
   left: 0;
@@ -255,11 +255,11 @@
 /* ai us css */
 
 .bg-ai-opacity {
-  background-image: url("../public/assets/ai-bg.avif");
+  background-image: url("../public/assets/ai-bg.jpeg");
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 0.5;
+  opacity: 0.8;
   position: absolute;
   top: 0;
   filter: blur(3px);
@@ -323,7 +323,7 @@
 /* strategy us css */
 
 .bg-strategy-opacity {
-  background-image: url("../public/assets/strategy-bg.webp");
+  background-image: url("../public/assets/strategy-bg.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -340,11 +340,11 @@
 /* delivery us css */
 
 .bg-delivery-opacity {
-  background-image: url("../public/assets/delivery-bg.jpg");
+  background-image: url("../public/assets/delivery-bg.avif");
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 0.5;
+  opacity: 0.7;
   position: absolute;
   top: 0;
   left: 0;
