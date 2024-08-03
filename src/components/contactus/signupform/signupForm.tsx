@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { Label } from "./label";
 import { Input } from "./input";
 import { cn } from "../../../utils/cn";
@@ -19,13 +20,6 @@ export function SignupFormDemo() {
     setFormData({ ...formData, [id]: value });
     if (id === "email") {
       setEmailError(!IsEmail(value));
-    }
-  };
-
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    if (validateForm()) {
-      saveContactDetails();
     }
   };
 
@@ -50,45 +44,32 @@ export function SignupFormDemo() {
   };
 
   const IsEmail = (email: any) => {
-    // Updated regular expression with unnecessary escape characters removed
     var regex = /^([a-zA-Z0-9_.+-])+@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     return regex.test(email);
   };
 
-  const saveContactDetails = () => {
-    const mailXmlString = `
-      <contactMail>
-        <customerName>${formData.firstName}</customerName>
-        <customerLastName>${formData.lastName}</customerLastName>
-        <email>${formData.email}</email>
-        <phoneNumber>${formData.phoneNumber}</phoneNumber>
-        <msg>${formData.message}</msg>
-      </contactMail>
-    `;
-    console.log(mailXmlString);
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
 
-    fetch("https://crosscloudops.com/Mail/services/mailsending/contactmail", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/xml",
-      },
-      body: mailXmlString,
-    })
-      .then((response) => response.json())
-      .then((json) => {
-        if (json.Response.status === "MailSent") {
-          alert("Contact Sent Successfully...");
-          setFormData({
-            firstName: "",
-            lastName: "",
-            email: "",
-            phoneNumber: "",
-            message: "",
-          });
-          // Redirect or handle success state
-        }
-      })
-      .catch((error) => console.error("Error sending contact mail:", error));
+    if (!validateForm()) {
+      return;
+    }
+
+    try {
+      await axios.post('http://localhost:3001/send-email', formData);
+      alert('Your message has been sent successfully!');
+      // Clear form fields
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phoneNumber: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('There was an error sending your message. Please try again later.');
+    }
   };
 
   return (

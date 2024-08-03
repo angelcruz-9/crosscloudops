@@ -1,8 +1,6 @@
-"use client";
-
-import { cn } from "../../../utils/cn";
 import React, { useEffect, useState, useCallback } from "react";
 import { motion } from "framer-motion";
+import { cn } from "../../../utils/cn";
 
 export const InfiniteMovingCards = ({
   items,
@@ -21,6 +19,7 @@ export const InfiniteMovingCards = ({
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
+  const [start, setStart] = useState(false);
 
   const getDirection = useCallback(() => {
     if (containerRef.current) {
@@ -39,14 +38,11 @@ export const InfiniteMovingCards = ({
   }, [direction]);
 
   const addAnimation = useCallback(() => {
-    if (containerRef.current && scrollerRef.current) {
+    if (scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
-
       scrollerContent.forEach((item) => {
         const duplicatedItem = item.cloneNode(true);
-        if (scrollerRef.current) {
-          scrollerRef.current.appendChild(duplicatedItem);
-        }
+        scrollerRef.current?.appendChild(duplicatedItem);
       });
 
       getDirection();
@@ -54,12 +50,9 @@ export const InfiniteMovingCards = ({
     }
   }, [getDirection]);
 
-
   useEffect(() => {
     addAnimation();
   }, [addAnimation]);
-
-  const [start, setStart] = useState(false);
 
   return (
     <div
@@ -80,10 +73,7 @@ export const InfiniteMovingCards = ({
           return (
             <li
               className="w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6 md:w-[450px] cursor-pointer transition-transform duration-300 ease-in-out transform hover:-translate-y-2"
-              style={{
-                background:
-                  "#2E2E2E",
-              }}
+              style={{ background: "#2E2E2E" }}
               key={idx}
             >
               <div className="flex justify-center items-center bg-orange-400 w-16 h-16 p-4 rounded-full mx-auto">

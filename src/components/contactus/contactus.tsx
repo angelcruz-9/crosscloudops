@@ -3,6 +3,31 @@ import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import CalendlyEmbed from "./calendlyEmbedded";
 import { motion } from "framer-motion";
 import { SignupFormDemo } from "./signupform/signupForm";
+import { DirectionAwareHover } from "../ui-components/hover-card";
+
+const contactUsData = [
+  {
+    id: 1,
+    img: "/assets/usa_office.jpg",
+    title: "USA Corporate Headquarters & Main Office:",
+    description: (
+      <>
+        201 N Illinois Street, South Tower Suite 1600, <br /> Indianapolis, IN 46204,
+        USA
+      </>
+    ),
+  },
+  {
+    id: 2,
+    img: "/assets/cincinati_office.jpg",
+    title: "Cincinnati Office:",
+    description: (
+      <>
+      8044 Montgomery Rd Suite 700, Kenwood, <br /> OH 45236, USA
+      </>
+    ),
+  },
+];
 
 const ContactUs: React.FC = () => {
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
@@ -17,7 +42,7 @@ const ContactUs: React.FC = () => {
 
   return (
     <div className="relative overflow-hidden">
-       <div className="bg-contact-opacity"></div>
+      <div className="bg-contact-opacity"></div>
       <div className="container-common relative z-10 py-24">
         <h1 className="text-4xl font-bold tracking-wider text-center pt-8 text-white">
           Contact us
@@ -57,23 +82,13 @@ const ContactUs: React.FC = () => {
         </div>
         <div className="flex flex-col pt-8">
           <h2 className="text-3xl font-fold text-white">Addresses :</h2>
-          <div className="grid grid-cols-1 xl:grid-cols-3 py-4">
-            <div className="mb-4 xl:mb-0 text-white">
-              <strong className="text-white">
-                USA Corporate Headquarters & Main Office:
-              </strong>{" "}
-              201 N Illinois Street, South Tower Suite 1600, Indianapolis, IN
-              46204, USA
-            </div>
-            <div className="mb-4 xl:mb-0 text-white">
-              <strong className="text-white">Cincinnati Office:</strong> 8044
-              Montgomery Rd Suite 700, Kenwood, OH 45236, USA
-            </div>
-            <div className="mb-4 xl:mb-0 text-white">
-              <strong className="text-white">India Office:</strong> 14/46, 1st
-              Floor, Phoenix Tech Tower, Uppal, Hyderabad, Telangana 500039.
-              Phone: +91-40-6793 4217
-            </div>
+          <div className="grid grid-cols-1 xl:grid-cols-2 py-4">
+            {contactUsData.map((item, index) => (
+              <DirectionAwareHover imageUrl={item.img}>
+                <p className="font-bold text-xl">{item.title}</p>
+                <p className="font-normal text-sm">{item.description}</p>
+              </DirectionAwareHover>
+            ))}
           </div>
         </div>
         {isCalendlyOpen && (

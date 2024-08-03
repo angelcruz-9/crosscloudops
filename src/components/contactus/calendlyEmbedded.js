@@ -28,7 +28,7 @@ const CalendlyEmbed = ({ onClose }) => {
         </div>
         <div
           className="calendly-inline-widget"
-          data-url="https://calendly.com/ccoteam/online-meetup?month=2022-06"
+          data-url="https://calendly.com/15-minute-introductory-call/online-meetup"
           style={{ minWidth: "320px", height: "580px" }}
         ></div>
       </div>

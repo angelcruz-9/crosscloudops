@@ -15,7 +15,7 @@ const navItems: NavItem[] = [
   },
   {
     name: "About Us",
-    link: "/aboutus",
+    link: "/#aboutus",
   },
   {
     name: "Services",
@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
     <div className="relative z-30">
       <div className="bg-[#F2F5F7]">
         <div className="flex container-common justify-between py-2">
-          <div className="flex items-center">
+          <div className="flex items-center gap-8">
             <a href="https://www.facebook.com/people/Cross-Cloud-Ops/100075985782048/" className="mr-1" target="_blank"  rel="noreferrer">
               <MdOutlineFacebook size={30} className='hover:text-orange-500'/>
             </a>
@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <p className="py-4 text-center leading-7 text-lg font-normal tracking-wide bg-[#000000] text-[#ffffff]">
-        Copyright © All Rights Reserved | Privacy Policy
+        Copyright 2024 © All Rights Reserved | Privacy Policy
       </p>
     </div>
   );

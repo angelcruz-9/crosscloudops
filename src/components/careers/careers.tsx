@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { ImCross } from "react-icons/im";
 
 interface JobListing {
   id: number;
@@ -12,6 +13,8 @@ interface JobListing {
 
 const Careers: React.FC = () => {
   const [selectedJob, setSelectedJob] = useState<JobListing | null>(null);
+  const [openPopUp, setOpenPopUp] = useState(false);
+  const [file, setFile] = useState(null);
 
   //  data for job listings
   const jobListings: JobListing[] = [
@@ -31,7 +34,7 @@ const Careers: React.FC = () => {
             lead the operations team to design and deliver high-quality,
             scalable technical solutions.
           </p>
-          <p className="text-lg text-gray-500 py-4">
+          <div className="text-lg text-gray-500 py-4">
             <span className="text-black font-bold">Responsibilities:</span>
             <ul className="list-disc pl-6 py-2">
               <li>
@@ -66,8 +69,8 @@ const Careers: React.FC = () => {
                 practices.
               </li>
             </ul>
-          </p>
-          <p className="text-lg text-gray-500 py-4">
+          </div>
+          <div className="text-lg text-gray-500 py-4">
             <span className="text-black font-bold">Required Skills:</span>
             <ul className="list-disc pl-6 py-2">
               <li>
@@ -101,7 +104,7 @@ const Careers: React.FC = () => {
                 with clients and sponsors.
               </li>
             </ul>
-          </p>
+          </div>
         </>
       ),
     },
@@ -121,7 +124,7 @@ const Careers: React.FC = () => {
             Cloud. Be part of and lead the operations team to design and deliver
             high-quality, scalable technical solutions.
           </p>
-          <p className="text-lg text-gray-500 py-4">
+          <div className="text-lg text-gray-500 py-4">
             <span className="text-black font-bold">Responsibilities:</span>
             <ul className="list-disc pl-6 py-2">
               <li>
@@ -156,8 +159,8 @@ const Careers: React.FC = () => {
                 practices.
               </li>
             </ul>
-          </p>
-          <p className="text-lg text-gray-500 py-4">
+          </div>
+          <div className="text-lg text-gray-500 py-4">
             <span className="text-black font-bold">Required Skills:</span>
             <ul className="list-disc pl-6 py-2">
               <li>
@@ -191,7 +194,7 @@ const Careers: React.FC = () => {
                 with clients and sponsors.
               </li>
             </ul>
-          </p>
+          </div>
         </>
       ),
     },
@@ -211,7 +214,7 @@ const Careers: React.FC = () => {
             Cloud. Be part of and lead the operations team to design and deliver
             high-quality, scalable technical solutions.
           </p>
-          <p className="text-lg text-gray-500 py-4">
+          <div className="text-lg text-gray-500 py-4">
             <span className="text-black font-bold">Responsibilities:</span>
             <ul className="list-disc pl-6 py-2">
               <li>
@@ -259,8 +262,8 @@ const Careers: React.FC = () => {
                 practices.
               </li>
             </ul>
-          </p>
-          <p className="text-lg text-gray-500 py-4">
+          </div>
+          <div className="text-lg text-gray-500 py-4">
             <span className="text-black font-bold">Required Skills:</span>
             <ul className="list-disc pl-6 py-2">
               <li>
@@ -294,7 +297,7 @@ const Careers: React.FC = () => {
                 with clients and sponsors.
               </li>
             </ul>
-          </p>
+          </div>
         </>
       ),
     },
@@ -314,7 +317,7 @@ const Careers: React.FC = () => {
             Cloud. Be part of and lead the operations team to design and deliver
             high-quality, scalable technical solutions.
           </p>
-          <p className="text-lg text-gray-500 py-4">
+          <div className="text-lg text-gray-500 py-4">
             <span className="text-black font-bold">Responsibilities:</span>
             <ul className="list-disc pl-6 py-2">
               <li>
@@ -377,8 +380,8 @@ const Careers: React.FC = () => {
                 practices.
               </li>
             </ul>
-          </p>
-          <p className="text-lg text-gray-500 py-4">
+          </div>
+          <div className="text-lg text-gray-500 py-4">
             <span className="text-black font-bold">Required Skills:</span>
             <ul className="list-disc pl-6 py-2">
               <li>
@@ -412,11 +415,13 @@ const Careers: React.FC = () => {
                 with clients and sponsors.
               </li>
             </ul>
-          </p>
+          </div>
         </>
       ),
     },
   ];
+
+  console.log(file);
 
   // Function to handle opening and closing details popup
   const toggleDetails = (job: JobListing) => {
@@ -427,69 +432,170 @@ const Careers: React.FC = () => {
     }
   };
 
+  const handleFileChange = (e: any) => {
+    setFile(e.target.files[0]);
+  };
+
   return (
     <div className="relative overflow-hidden">
       <div className="bg-career-opacity"></div>
-          <div className="container-common relative py-32 z-10">
-      <div className="flex flex-col items-center">
-        <h1 className="text-4xl font-bold text-center text-white">Careers</h1>
-        <p className="text-xl py-4 text-white">Work for the Best</p>
-        <p className="text-xl text-white">
-          Join the quickly developing, experienced global innovator in
-          programming quality affirmation and drive your vocation higher than
-          ever of progress.
-        </p>
-      </div>
-      {/* Job Listings */}
-      <div className="grid grid-cols-1 gap-4 mt-8">
-        {jobListings.map((job) => (
-          <div
-            key={job.id}
-            className="bg-white p-4 rounded-lg shadow-md"
-            onClick={() => toggleDetails(job)}
-          >
-            <div className="flex justify-between items-center cursor-pointer">
-              <div className="flex flex-col xl:flex-row xl:items-center">
-                <h2 className="text-xl font-semibold">{job.title}</h2>
-                <p className="text-lg py-4 ml-0 xl:ml-6">
-                  <span className="text-blue-900">Experience:</span> {job.exp}
-                </p>
+      <div className="container-common relative py-32 z-10">
+        <div className="flex flex-col items-center">
+          <h1 className="text-4xl font-bold text-center text-white">Careers</h1>
+          <p className="text-xl py-4 text-white">Work for the Best</p>
+          <p className="text-xl text-white">
+            Join the quickly developing, experienced global innovator in
+            programming quality affirmation and drive your vocation higher than
+            ever of progress.
+          </p>
+        </div>
+        {/* Job Listings */}
+        <div className="grid grid-cols-1 gap-4 mt-8">
+          {jobListings.map((job) => (
+            <div
+              key={job.id}
+              className="bg-white p-4 rounded-lg shadow-md"
+              onClick={() => toggleDetails(job)}
+            >
+              <div className="flex justify-between items-center cursor-pointer">
+                <div className="flex flex-col xl:flex-row xl:items-center">
+                  <h2 className="text-xl font-semibold">{job.title}</h2>
+                  <p className="text-lg py-4 ml-0 xl:ml-6">
+                    <span className="text-blue-900">Experience:</span> {job.exp}
+                  </p>
+                </div>
+                <button className="text-blue-500 hover:underline">
+                  {selectedJob?.id === job.id ? (
+                    <IoIosArrowUp className="text-xl" />
+                  ) : (
+                    <IoIosArrowDown className="text-xl" />
+                  )}
+                </button>
               </div>
-              <button className="text-blue-500 hover:underline">
-                {selectedJob?.id === job.id ? (
-                  <IoIosArrowUp className="text-xl" />
-                ) : (
-                  <IoIosArrowDown className="text-xl" />
+              {/* Dropdown block for details */}
+              <AnimatePresence>
+                {selectedJob?.id === job.id && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="overflow-hidden mt-4"
+                  >
+                    <div className="text-lg text-[#b7b7b7] p-4">
+                      <div className="flex justify-between items-center">
+                        <h3 className="text-2xl text-black font-semibold mb-4">
+                          {selectedJob.popupTitle}
+                        </h3>
+                        <button
+                          className="border border-orange-500 bg-orange-500 hover:bg-orange-700 text-black hover:text-white px-6 rounded-lg"
+                          onClick={() => setOpenPopUp(!openPopUp)}
+                        >
+                          Apply
+                        </button>
+                      </div>
+                      {selectedJob.description}
+                    </div>
+                  </motion.div>
                 )}
+              </AnimatePresence>
+            </div>
+          ))}
+        </div>
+      </div>
+      {openPopUp && (
+        <div className="flex absolute top-20 left-0 xl:left-[40%] bg-gray-300 z-10 p-10 rounded-lg">
+          <form className="flex flex-col h-[750px] overflow-auto">
+            <div className="flex flex-col mb-4">
+              <label className="mb-2 text-gray-700 font-medium">
+                First Name
+              </label>
+              <input
+                type="text"
+                placeholder="Enter your first name"
+                className="h-10 rounded-md pl-2 border border-gray-300"
+                required
+              />
+            </div>
+            <div className="flex flex-col mb-4">
+              <label className="mb-2 text-gray-700 font-medium">
+                Last Name
+              </label>
+              <input
+                type="text"
+                placeholder="Enter your last name"
+                className="h-10 rounded-md pl-2 border border-gray-300"
+                required
+              />
+            </div>
+            <div className="flex flex-col mb-4">
+              <label className="mb-2 text-gray-700 font-medium">Email</label>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="h-10 rounded-md pl-2 border border-gray-300"
+                required
+              />
+            </div>
+            <div className="flex flex-col mb-4">
+              <label className="mb-2 text-gray-700 font-medium">Location</label>
+              <select className="h-10 rounded-md pl-2 border border-gray-300">
+                <option>North America</option>
+                <option>India</option>
+              </select>
+            </div>
+            <div className="flex flex-col mb-4">
+              <label className="mb-2 text-gray-700 font-medium">
+                Job Title
+              </label>
+              <select className="h-10 rounded-md pl-2 border border-gray-300">
+                <option>Please Select Job Title</option>
+                {jobListings.map((item,index) => (
+                  <option key={index}>{item.title}</option>
+                ))}
+              </select>
+            </div>
+            <div className="flex flex-col mb-4">
+              <label
+                htmlFor="file-upload"
+                className="block text-gray-700 font-medium mb-2"
+              >
+                Upload File
+              </label>
+              <input
+                type="file"
+                id="file-upload"
+                onChange={(e) => handleFileChange(e)}
+                className="block w-full text-gray-600"
+              />
+            </div>
+            <div className="flex flex-col mb-4">
+              <label className="mb-2 text-gray-700 font-medium">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                placeholder="Enter your phone number"
+                className="h-10 rounded-md pl-2 border border-gray-300"
+                required
+              />
+            </div>
+            <div className="flex flex-col mb-4 w-full">
+              <label className="mb-2 text-gray-700 font-medium">Comments</label>
+              <textarea
+                placeholder="Enter your comments"
+                className="h-28 rounded-md pl-2 border border-gray-300"
+              ></textarea>
+            </div>
+            <div className="w-full flex justify-center">
+              <button className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300">
+                Submit
               </button>
             </div>
-            {/* Dropdown block for details */}
-            <AnimatePresence>
-              {selectedJob?.id === job.id && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="overflow-hidden mt-4"
-                >
-                  <div className="text-lg text-[#b7b7b7] p-4">
-                    <div className="flex justify-between items-center">
-                      <h3 className="text-2xl text-black font-semibold mb-4">
-                        {selectedJob.popupTitle}
-                      </h3>
-                      <button className="border border-orange-500 bg-orange-500 hover:bg-orange-700 text-black hover:text-white px-6 rounded-lg">Apply</button>
-                    </div>
-                    {selectedJob.description}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        ))}
-      </div>
-
-    </div>
+          </form>
+          <ImCross className="absolute top-4 right-6 cursor-pointer" onClick={() => setOpenPopUp(!openPopUp)}/>
+        </div>
+      )}
     </div>
   );
 };

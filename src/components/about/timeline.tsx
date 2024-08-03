@@ -49,7 +49,7 @@ const Timeline: React.FC<TimelineProps> = ({ timeline }) => {
   }, [activeIndex]);
 
   return (
-    <div className="relative z-20 pl-12 ml-4 xl:ml-0">
+    <div className="relative xl:w-1/2 z-20 pl-12 ml-4 xl:ml-0">
       <div
         className="timeline-line absolute left-0 top-0 bg-gray-300 transition-all duration-500 ease-in-out"
         style={{ height: `${lineHeight}px`, width: "4px" }}
@@ -58,7 +58,7 @@ const Timeline: React.FC<TimelineProps> = ({ timeline }) => {
         <motion.div
           key={index}
           ref={(el) => (timelineRefs.current[index] = el)}
-          className={`timeline-card mb-8 p-4 w-full xl:w-2/3 ${
+          className={`timeline-card mb-8 p-4 w-full ${
             index === activeIndex ? "" : ""
           }`}
           initial={{ opacity: 0, x: -100 }}

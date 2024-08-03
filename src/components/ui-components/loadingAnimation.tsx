@@ -1,12 +1,14 @@
-import React from 'react';
+import React from "react";
 
 const LoadingAnimation: React.FC = () => {
   return (
-    <div role="status" className='loading-container'>
-      <div className="loading-dot"></div>
-      <div className="loading-dot"></div>
-      <div className="loading-dot"></div>
-      <span className="sr-only">Loading...</span>
+    <div id="container" className="h-screen flex flex-col justify-center items-center">
+      <label className="loading-title">Loading ...</label>
+      <span className="loading-circle sp1">
+        <span className="loading-circle sp2">
+          <span className="loading-circle sp3"></span>
+        </span>
+      </span>
     </div>
   );
 };
