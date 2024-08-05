@@ -19,17 +19,13 @@ const Card: React.FC<CardProps> = ({ cards }) => {
         return (
           <motion.div
             key={index}
-            className="rounded-lg relative flex flex-col cursor-pointer justify-start p-4 xl:p-8  mb-6 xl:mb-0"
+            className="rounded-lg relative flex flex-col cursor-pointer card-effect justify-start p-4 xl:p-8  mb-6 xl:mb-0"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.3 }}
-            style={{
-              borderRadius: "20px",
-              backgroundColor: "#2E2E2E"
-            }}
           >
             <div className="flex justify-center absolute left-[40%] xl:left-[45%] -top-8 items-center bg-orange-400 w-16 h-16 p-4 rounded-full mx-auto">
               <motion.img

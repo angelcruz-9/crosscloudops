@@ -114,10 +114,22 @@
   position: relative;
   z-index: 100;
   left: -10px;
-  background-color: #1e1e1e;
+  background: rgba(255, 255, 255, 0.1); /* Transparent white background */
   padding: 20px;
   border-radius: 8px;
   transition: transform 0.5s ease-in-out;
+  backdrop-filter: blur(10px); /* Apply the glass effect */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Optional: adds a subtle border */
+}
+
+.card-effect {
+  position: relative;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+  border-radius: 8px;
+  transition: transform 0.5s ease-in-out;
+  backdrop-filter: blur(10px); /* Apply the glass effect */
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .timeline-card.active {
@@ -238,7 +250,7 @@
 /* sales us css */
 
 .bg-sales-opacity {
-  background-image: url("../public/assets/salesforce-img2.jpg");
+  background-image: url("../public/assets/salesforce-bg.jpeg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -268,7 +280,7 @@
 /* cloud us css */
 
 .bg-cloud-opacity {
-  background-image: url("../public/assets/aws-bg.webp");
+  background-image: url("../public/assets/aws-bg.png");
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
