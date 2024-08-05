@@ -1,29 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.b3813e4e.css",
-    "main.js": "/static/js/main.bb8067a4.js",
-    "static/media/cloud-bg.jpg": "/static/media/cloud-bg.f95f3e3f9232ef0f01ff.jpg",
-    "static/media/salesforce-img2.jpg": "/static/media/salesforce-img2.4bfb7d08adaacab0cdf2.jpg",
-    "static/media/aws-bg.webp": "/static/media/aws-bg.2d9ded8e0f903f0206ca.webp",
-    "static/media/strategy-bg.jpg": "/static/media/strategy-bg.458620a8240ed210b375.jpg",
-    "static/media/crm-bg.jpg": "/static/media/crm-bg.0488959d35d3389b62f1.jpg",
-    "static/media/services-bg.jpg": "/static/media/services-bg.8f20c17a734b6df01262.jpg",
-    "static/media/devops-bg.jpg": "/static/media/devops-bg.21cfdeee6368696ce142.jpg",
-    "static/media/salesforce-bg.jpg": "/static/media/salesforce-bg.c691ab1c0acbec3127b3.jpg",
-    "static/media/pardot-bg.avif": "/static/media/pardot-bg.cdb2bfb7ff8af7f0eb16.avif",
-    "static/media/contactus-bg.jpg": "/static/media/contactus-bg.c409a84b2f5baacce0b9.jpg",
-    "static/media/delivery-bg.avif": "/static/media/delivery-bg.891c248f9ff28e189b2d.avif",
-    "static/media/outsourcing-bg.webp": "/static/media/outsourcing-bg.092c86cc8302e4d6716a.webp",
-    "static/media/oracle-bg.webp": "/static/media/oracle-bg.d713a5d28010f891df8b.webp",
-    "static/media/ai-bg.jpeg": "/static/media/ai-bg.55882701bde9ffeaa80d.jpeg",
-    "static/media/data-bg.avif": "/static/media/data-bg.8f0bbae1f0bcb69a1ced.avif",
-    "static/media/career-bg.avif": "/static/media/career-bg.41cdfc8fb4b4e0684ba6.avif",
-    "index.html": "/index.html",
-    "main.b3813e4e.css.map": "/static/css/main.b3813e4e.css.map",
-    "main.bb8067a4.js.map": "/static/js/main.bb8067a4.js.map"
+    "main.css": "/crosscloudops/static/css/main.4d60b267.css",
+    "main.js": "/crosscloudops/static/js/main.33b1f0df.js",
+    "static/media/cloud-bg.jpg": "/crosscloudops/static/media/cloud-bg.f95f3e3f9232ef0f01ff.jpg",
+    "static/media/strategy-bg.jpg": "/crosscloudops/static/media/strategy-bg.458620a8240ed210b375.jpg",
+    "static/media/salesforce-bg.jpeg": "/crosscloudops/static/media/salesforce-bg.c33b9c8ef0c06a4dcb4c.jpeg",
+    "static/media/crm-bg.jpg": "/crosscloudops/static/media/crm-bg.0488959d35d3389b62f1.jpg",
+    "static/media/services-bg.jpg": "/crosscloudops/static/media/services-bg.8f20c17a734b6df01262.jpg",
+    "static/media/devops-bg.jpg": "/crosscloudops/static/media/devops-bg.21cfdeee6368696ce142.jpg",
+    "static/media/salesforce-bg.jpg": "/crosscloudops/static/media/salesforce-bg.c691ab1c0acbec3127b3.jpg",
+    "static/media/pardot-bg.avif": "/crosscloudops/static/media/pardot-bg.cdb2bfb7ff8af7f0eb16.avif",
+    "static/media/contactus-bg.jpg": "/crosscloudops/static/media/contactus-bg.c409a84b2f5baacce0b9.jpg",
+    "static/media/delivery-bg.avif": "/crosscloudops/static/media/delivery-bg.891c248f9ff28e189b2d.avif",
+    "static/media/outsourcing-bg.webp": "/crosscloudops/static/media/outsourcing-bg.092c86cc8302e4d6716a.webp",
+    "static/media/oracle-bg.webp": "/crosscloudops/static/media/oracle-bg.d713a5d28010f891df8b.webp",
+    "static/media/ai-bg.jpeg": "/crosscloudops/static/media/ai-bg.55882701bde9ffeaa80d.jpeg",
+    "static/media/data-bg.avif": "/crosscloudops/static/media/data-bg.8f0bbae1f0bcb69a1ced.avif",
+    "static/media/career-bg.avif": "/crosscloudops/static/media/career-bg.41cdfc8fb4b4e0684ba6.avif",
+    "index.html": "/crosscloudops/index.html",
+    "main.4d60b267.css.map": "/crosscloudops/static/css/main.4d60b267.css.map",
+    "main.33b1f0df.js.map": "/crosscloudops/static/js/main.33b1f0df.js.map"
   },
   "entrypoints": [
-    "static/css/main.b3813e4e.css",
-    "static/js/main.bb8067a4.js"
+    "static/css/main.4d60b267.css",
+    "static/js/main.33b1f0df.js"
   ]
 }
