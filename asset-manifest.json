@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/crosscloudops/static/css/main.4d60b267.css",
-    "main.js": "/crosscloudops/static/js/main.33b1f0df.js",
+    "main.css": "/crosscloudops/static/css/main.86de7dcc.css",
+    "main.js": "/crosscloudops/static/js/main.d4c11705.js",
     "static/media/cloud-bg.jpg": "/crosscloudops/static/media/cloud-bg.f95f3e3f9232ef0f01ff.jpg",
     "static/media/strategy-bg.jpg": "/crosscloudops/static/media/strategy-bg.458620a8240ed210b375.jpg",
     "static/media/salesforce-bg.jpeg": "/crosscloudops/static/media/salesforce-bg.c33b9c8ef0c06a4dcb4c.jpeg",
@@ -18,11 +18,11 @@
     "static/media/data-bg.avif": "/crosscloudops/static/media/data-bg.8f0bbae1f0bcb69a1ced.avif",
     "static/media/career-bg.avif": "/crosscloudops/static/media/career-bg.41cdfc8fb4b4e0684ba6.avif",
     "index.html": "/crosscloudops/index.html",
-    "main.4d60b267.css.map": "/crosscloudops/static/css/main.4d60b267.css.map",
-    "main.33b1f0df.js.map": "/crosscloudops/static/js/main.33b1f0df.js.map"
+    "main.86de7dcc.css.map": "/crosscloudops/static/css/main.86de7dcc.css.map",
+    "main.d4c11705.js.map": "/crosscloudops/static/js/main.d4c11705.js.map"
   },
   "entrypoints": [
-    "static/css/main.4d60b267.css",
-    "static/js/main.33b1f0df.js"
+    "static/css/main.86de7dcc.css",
+    "static/js/main.d4c11705.js"
   ]
 }
