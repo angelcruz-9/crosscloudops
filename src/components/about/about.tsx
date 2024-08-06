@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Timeline from "./timeline";
+import Lottie from "lottie-react";
+import animationData from '../../utils/cloud.json';
 
 const aboutData = {
   title: "The Cloud Is Our Expertise",
@@ -55,7 +57,6 @@ const aboutData = {
 };
 
 const AboutUs: React.FC = () => {
-
   return (
     <div className="aboutus py-12 xl:py-24 relative overflow-hidden">
       <div className="bg-fixed-opacity"></div>
@@ -79,13 +80,14 @@ const AboutUs: React.FC = () => {
           </p>
         </motion.div>
       </div>
-      <div className="flex flex-col xl:flex-row justify-between mx-8 xl:mx-44">
+      <div className="flex flex-col xl:flex-row justify-between items-center mx-8 xl:mx-44">
         <Timeline timeline={aboutData.cardsData} />
-        <img
-            src={`${process.env.PUBLIC_URL}/assets/cloud.gif`}
-            alt="CLoud"
-            className="w-full h-full xl:w-1/2 xl:h-1/2 z-20"
-          />
+        <Lottie
+          animationData={animationData}
+          loop={true}
+          autoplay={true}
+          style={{ width: 350, height: 350 }}
+        />
       </div>
     </div>
   );
