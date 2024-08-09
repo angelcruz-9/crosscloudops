@@ -82,7 +82,7 @@ const Navigation: React.FC = () => {
   return (
     <div
       className={`${
-        isScrolled ? "shadow-lg bg-[#000000]" : "bg-transparent"
+        isScrolled ? "nav-bar" : "bg-transparent"
       } fixed top-0 left-0 right-0 z-50`}
     >
       <div className="container-common flex justify-between items-center py-8">

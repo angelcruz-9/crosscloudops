@@ -488,7 +488,7 @@ const Careers: React.FC = () => {
                           {selectedJob.popupTitle}
                         </h3>
                         <button
-                          className="border border-orange-500 bg-orange-500 hover:bg-orange-700 text-black hover:text-white px-6 rounded-lg"
+                          className="border border-orange-500 bg-orange-500 hover:bg-orange-600 text-black hover:text-white py-2 px-8 rounded-xl"
                           onClick={() => setOpenPopUp(!openPopUp)}
                         >
                           Apply

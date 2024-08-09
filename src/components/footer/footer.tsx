@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-      <p className="py-4 text-center leading-7 text-lg font-normal tracking-wide bg-[#000000] text-[#ffffff]">
+      <p className="py-4 text-center leading-7 text-lg font-normal tracking-wide nav-bar  text-[#ffffff]">
         Copyright 2024 © All Rights Reserved | Privacy Policy
       </p>
     </div>

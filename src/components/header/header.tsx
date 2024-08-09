@@ -1,5 +1,6 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
 
 const Header: React.FC = () => {
   return (
@@ -12,8 +13,19 @@ const Header: React.FC = () => {
         transition={{ duration: 0.6, ease: "easeInOut" }}
       >
         <div className="container-common relative z-20 text-center flex flex-col items-center xl:text-left w-full xl:w-1/2">
-          <h1 className="relative z-20 text-4xl md:text-5xl text-white font-sans font-bold leading-10">
-            Cross Cloud Ops <br />
+          <h1 className="relative z-20 text-center text-4xl md:text-5xl text-white font-sans font-bold leading-10">
+            <TypeAnimation
+              sequence={[
+                "Cross Cloud Ops",
+                1000, // Wait 1s before next line
+                "",
+                1000, // Wait 2s before sequence restarts
+              ]}
+              wrapper="span"
+              cursor={true}
+              repeat={Infinity}
+            />{" "}
+            <br />
             <span className="highlighted-gradient">
               Your Partner In The Cloud
             </span>
@@ -42,6 +54,7 @@ const Header: React.FC = () => {
           muted
           playsInline
         ></video>
+        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent -z-1"></div>
       </motion.section>
     </AnimatePresence>
   );

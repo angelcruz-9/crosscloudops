@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Timeline from "./timeline";
 import Lottie from "lottie-react";
-import animationData from '../../utils/cloud.json';
+import animationData from "../../utils/cloud.json";
 
 const aboutData = {
   title: "The Cloud Is Our Expertise",
@@ -11,7 +11,7 @@ const aboutData = {
       Our tailored solutions to customer experience with cloud-based exceed
       industry standards and drive rapid growth. Fast-forward to success with
       our robust marketing solutions and integrate multiple clouds seamlessly.{" "}
-      <a href="/services" className="text-blue-500 hover:text-blue-700">
+      <a href="/services" className="text-orange-500 hover:text-orange-700">
         Learn More
       </a>
     </p>
@@ -80,15 +80,16 @@ const AboutUs: React.FC = () => {
           </p>
         </motion.div>
       </div>
-      <div className="flex flex-col xl:flex-row justify-between items-center mx-8 xl:mx-44">
+      <div className="flex flex-col xl:flex-row justify-between items-center mx-8 xl:mx-44 relative z-30">
         <Timeline timeline={aboutData.cardsData} />
         <Lottie
           animationData={animationData}
           loop={true}
           autoplay={true}
-          style={{ width: 350, height: 350 }}
+          style={{ width: 400, height: 400 }}
         />
       </div>
+      <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-t from-black to-transparent -z-1"></div>
     </div>
   );
 };

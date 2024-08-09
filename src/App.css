@@ -7,6 +7,15 @@
   width: 1200px;
 }
 
+.nav-bar {
+  backdrop-filter: blur(10px);
+  background-color: rgba(13, 13, 13, 0.85);
+  width: 100%;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  opacity: 1;
+}
+
 @media only screen and (max-width: 1280px) {
   .container-common {
     width: 90%;
@@ -392,7 +401,7 @@
 /* delivery us css */
 
 .bg-delivery-opacity {
-  background-image: url("../public/assets/delivery-bg.avif");
+  background-image: url("../public/assets/delivery-bg.jpeg");
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -486,3 +495,6 @@
 .animate-scroll {
   animation: scroll var(--animation-duration) linear infinite;
 }
+
+
+
