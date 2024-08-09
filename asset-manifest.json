@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/crosscloudops/static/css/main.86de7dcc.css",
-    "main.js": "/crosscloudops/static/js/main.d4c11705.js",
-    "static/media/cloud-bg.jpg": "/crosscloudops/static/media/cloud-bg.f95f3e3f9232ef0f01ff.jpg",
+    "main.css": "/crosscloudops/static/css/main.74d5e919.css",
+    "main.js": "/crosscloudops/static/js/main.c4562533.js",
     "static/media/strategy-bg.jpg": "/crosscloudops/static/media/strategy-bg.458620a8240ed210b375.jpg",
     "static/media/salesforce-bg.jpeg": "/crosscloudops/static/media/salesforce-bg.c33b9c8ef0c06a4dcb4c.jpeg",
     "static/media/crm-bg.jpg": "/crosscloudops/static/media/crm-bg.0488959d35d3389b62f1.jpg",
+    "static/media/delivery-bg.jpeg": "/crosscloudops/static/media/delivery-bg.d5d284bcd3600b370151.jpeg",
     "static/media/services-bg.jpg": "/crosscloudops/static/media/services-bg.8f20c17a734b6df01262.jpg",
     "static/media/devops-bg.jpg": "/crosscloudops/static/media/devops-bg.21cfdeee6368696ce142.jpg",
     "static/media/salesforce-bg.jpg": "/crosscloudops/static/media/salesforce-bg.c691ab1c0acbec3127b3.jpg",
+    "static/media/cloud-bg.jpg": "/crosscloudops/static/media/cloud-bg.2f86c22fe9bec1e6a30a.jpg",
     "static/media/pardot-bg.avif": "/crosscloudops/static/media/pardot-bg.cdb2bfb7ff8af7f0eb16.avif",
     "static/media/contactus-bg.jpg": "/crosscloudops/static/media/contactus-bg.c409a84b2f5baacce0b9.jpg",
-    "static/media/delivery-bg.avif": "/crosscloudops/static/media/delivery-bg.891c248f9ff28e189b2d.avif",
     "static/media/outsourcing-bg.webp": "/crosscloudops/static/media/outsourcing-bg.092c86cc8302e4d6716a.webp",
     "static/media/oracle-bg.webp": "/crosscloudops/static/media/oracle-bg.d713a5d28010f891df8b.webp",
     "static/media/ai-bg.jpeg": "/crosscloudops/static/media/ai-bg.55882701bde9ffeaa80d.jpeg",
     "static/media/data-bg.avif": "/crosscloudops/static/media/data-bg.8f0bbae1f0bcb69a1ced.avif",
     "static/media/career-bg.avif": "/crosscloudops/static/media/career-bg.41cdfc8fb4b4e0684ba6.avif",
     "index.html": "/crosscloudops/index.html",
-    "main.86de7dcc.css.map": "/crosscloudops/static/css/main.86de7dcc.css.map",
-    "main.d4c11705.js.map": "/crosscloudops/static/js/main.d4c11705.js.map"
+    "main.74d5e919.css.map": "/crosscloudops/static/css/main.74d5e919.css.map",
+    "main.c4562533.js.map": "/crosscloudops/static/js/main.c4562533.js.map"
   },
   "entrypoints": [
-    "static/css/main.86de7dcc.css",
-    "static/js/main.d4c11705.js"
+    "static/css/main.74d5e919.css",
+    "static/js/main.c4562533.js"
   ]
 }
