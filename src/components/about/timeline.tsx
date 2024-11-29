@@ -78,7 +78,7 @@ const Timeline: React.FC<TimelineProps> = ({ timeline }) => {
             <span className="timeline-icon">{card.icon}</span>
           </motion.div>
           <div className="flex flex-col items-start mb-4">
-            <h3 className={`text-[24px] font-bold ${index <= activeIndex ? "text-orange-500" : "text-white"}`}>{card.title}</h3>
+            <h2 className={`text-[24px] font-bold ${index <= activeIndex ? "text-orange-500" : "text-white"}`}>{card.title}</h2>
             <p className="text-[18px] leading-7 text-white pt-8">{card.desc}</p>
           </div>
         </motion.div>

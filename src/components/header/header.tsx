@@ -1,6 +1,8 @@
-import React from "react";
+import React, { Suspense, lazy } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
-import { TypeAnimation } from "react-type-animation";
+import FooterLogo from '../footer/footer-logo';
+
+const TypeAnimationComponent = lazy(() => import('./typeAnimation'));
 
 const Header: React.FC = () => {
   return (
@@ -14,46 +16,41 @@ const Header: React.FC = () => {
       >
         <div className="container-common relative z-20 text-center flex flex-col items-center xl:text-left w-full xl:w-1/2">
           <h1 className="relative z-20 text-center text-4xl md:text-5xl text-white font-sans font-bold leading-10">
-            <TypeAnimation
-              sequence={[
-                "Cross Cloud Ops",
-                1000, // Wait 1s before next line
-                "",
-                1000, // Wait 2s before sequence restarts
-              ]}
-              wrapper="span"
-              cursor={true}
-              repeat={Infinity}
-            />{" "}
+          <Suspense fallback={<div>Loading...</div>}>
+              <TypeAnimationComponent />
+            </Suspense>
             <br />
-            <span className="highlighted-gradient">
+            <h1 className="highlighted-gradient">
               Your Partner In The Cloud
-            </span>
+            </h1>
           </h1>
           <div className="text-2xl font-bold text-white flex flex-col md:flex-row items-center py-6">
-            <img
-              src={`${process.env.PUBLIC_URL}/assets/sf_logo.png`}
-              alt="partner"
-              className="mt-4 md:ml-24 xl:ml-0"
-              width={120}
-            />
-            <h3 className="md:ml-8 text-[#fafafa] max-w-lg mx-auto my-2 mt-4 md:mt-0 text-md text-center md:text-left relative z-20">
-              Personalized IT Consultancy
-            </h3>
+            <FooterLogo />
           </div>
-          <p className="md:mt-4 text-[#fafafa] max-w-lg my-2 text-2xl text-center md:text-left relative z-20">
+          <h2 className="md:mt-4 text-[#fafafa] max-w-lg my-2 text-lg xl:text-2xl text-center md:text-left relative z-20">
             Let us build optimized digital experiences to drive your company's
             rapid growth.
-          </p>
+          </h2>
         </div>
         <video
           className="absolute top-0 left-0 w-full h-full object-cover z-60 opacity-75"
-          src={`${process.env.PUBLIC_URL}/assets/header.mp4`}
           autoPlay
           loop
           muted
           playsInline
-        ></video>
+          preload="auto"
+        >
+          <source
+            src={`${process.env.PUBLIC_URL}/assets/header.mp4`}
+            type="video/mp4"
+          />
+          <source
+            src={`${process.env.PUBLIC_URL}/assets/header.webm`}
+            type="video/webm"
+          />
+          Your browser does not support the video tag.
+        </video>
+
         <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent -z-1"></div>
       </motion.section>
     </AnimatePresence>

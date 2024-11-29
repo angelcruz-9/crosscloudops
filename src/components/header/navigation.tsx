@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { LuMenuSquare } from "react-icons/lu";
 import { IoClose } from "react-icons/io5";
 import { motion, AnimatePresence } from "framer-motion";
@@ -59,6 +59,7 @@ const Navigation: React.FC = () => {
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,12 +72,32 @@ const Navigation: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
+
   const handleDropdownToggle = (index: number) => {
     setOpenDropdown(openDropdown === index ? null : index);
   };
 
   const handleMobileMenuToggle = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
   };
 
   return (
@@ -103,6 +124,7 @@ const Navigation: React.FC = () => {
               item={item}
               index={index}
               handleDropdownToggle={handleDropdownToggle}
+              handleLinkClick={handleLinkClick}
             />
           ))}
         </div>
@@ -112,6 +134,7 @@ const Navigation: React.FC = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
+              ref={mobileMenuRef}
               initial={{ opacity: 0, y: -100 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -100 }}
@@ -135,6 +158,7 @@ const Navigation: React.FC = () => {
                     item={item}
                     index={index}
                     handleDropdownToggle={handleDropdownToggle}
+                    handleLinkClick={handleLinkClick}
                   />
                 ))}
               </motion.div>

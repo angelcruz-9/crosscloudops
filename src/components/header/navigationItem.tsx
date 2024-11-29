@@ -19,7 +19,8 @@ const NavigationItem: React.FC<{
   item: NavItem;
   index: number;
   handleDropdownToggle: (index: number) => void;
-}> = ({ item, index, handleDropdownToggle }) => {
+  handleLinkClick: () => void;
+}> = ({ item, index, handleDropdownToggle, handleLinkClick }) => {
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -49,7 +50,7 @@ const NavigationItem: React.FC<{
       onMouseLeave={() => setIsOpen(false)}
     >
       <div className="flex items-center">
-        <Link to={item.link || "#"} className="text-lg text-white hover:text-orange-400">
+        <Link to={item.link || "#"} className="text-lg text-white hover:text-orange-400" onClick={handleLinkClick}>
           {item.name}
         </Link>
         {item.subItems && (
@@ -86,6 +87,7 @@ const NavigationItem: React.FC<{
                         key={nestedIndex}
                         to={nestedItem.link || "#"}
                         className="text-sm text-[#ccc] hover:text-orange-400"
+                        onClick={handleLinkClick}
                       >
                         {nestedItem.name}
                       </Link>

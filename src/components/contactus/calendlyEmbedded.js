@@ -21,8 +21,8 @@ const CalendlyEmbed = ({ onClose }) => {
       animate={{ opacity: 1 }}
     >
       <div className="bg-white p-8 rounded-lg w-11/12">
-        <div className="flex justify-end items-center mb-4">
-          <button className="text-gray-600" onClick={onClose}>
+        <div className="flex justify-end items-end mb-4">
+          <button className="text-gray-600 " onClick={onClose}>
             <MdClose className="text-2xl" />
           </button>
         </div>

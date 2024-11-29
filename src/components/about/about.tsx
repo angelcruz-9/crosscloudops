@@ -19,7 +19,7 @@ const aboutData = {
   cardsData: [
     {
       title: "Our Story",
-      desc: "As our name suggests, we are a dedicated team of Salesforce tech experts with a passion for helping our customers thrive in the cloud. Our passion and expertise combine to bring the best solutions to you. We are women-owned and are part of the Pledge 1% campaign. We are dedicated to improving the world while we empower your company through digital transformation.",
+      desc: "Founded on a legacy of excellence in IT and software development, Cross Cloud Ops has evolved into a leading specialist in cloud migration, PAAS solutions, and comprehensive IT services. Leveraging years of experience and deep industry knowledge, our expert team is dedicated to delivering innovative, tailored solutions that drive digital transformation and foster business growth. As a minority-owned business and proud participant in the Pledge 1% campaign, we are committed to not only advancing technology but also making a positive impact on our community and beyond. Partner with us to navigate the complexities of the digital landscape with confidence and expertise.",
       icon: (
         <img
           src={`${process.env.PUBLIC_URL}/assets/story.png`}
@@ -42,8 +42,8 @@ const aboutData = {
       ),
     },
     {
-      title: "Why Cross Cloud Ops",
-      desc: "Cross Cloud Ops is a Salesforce Partner with 50+ developers and experts globally, garnering a perfect 5-star customer satisfaction rating. Our projects power 150+ million customers for our clients. We regularly beat competitor pricing and time-to-launch estimates. We have decades of experience and dozens of certifications.",
+      title: "Why Choose Cross Cloud Ops?",
+      desc: "Cross Cloud Ops delivers exceptional custom development and cloud migration solutions, powering over 150 million end-users globally. We offer competitive pricing and faster time-to-launch compared to our competitors, backed by decades of experience and numerous certifications. Our tailored approach ensures solutions that fit your unique needs, while our global reach and local insights provide both scale and personal attention. Trust us to deliver innovative, future-ready solutions with unmatched efficiency and expertise.",
       icon: (
         <img
           src={`${process.env.PUBLIC_URL}/assets/whyus.png`}
@@ -55,7 +55,6 @@ const aboutData = {
     },
   ],
 };
-
 const AboutUs: React.FC = () => {
   return (
     <div className="aboutus py-12 xl:py-24 relative overflow-hidden">

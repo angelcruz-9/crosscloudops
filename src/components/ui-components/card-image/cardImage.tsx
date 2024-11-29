@@ -23,6 +23,7 @@ const CardImage: React.FC<CardProps> = ({ imageSrc, title, description, linkUrl,
         className="w-full h-48 object-cover"
         src={`${process.env.PUBLIC_URL}${imageSrc}`}
         alt={title}
+        loading="lazy"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { delay: 0.2, duration: 0.8 } }}
       />
@@ -44,7 +45,7 @@ const CardImage: React.FC<CardProps> = ({ imageSrc, title, description, linkUrl,
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { delay: 0.8, duration: 0.8 } }}
       >
-        <a href={linkUrl} className="text-blue-500 hover:text-blue-800">
+        <a href={linkUrl} className="text-blue-500 hover:text-blue-800"  aria-label="Learn about our services at Cross Cloud Ops">
           {linkText}
         </a>
         <motion.div className='text-blue-500 hover:text-blue-800 mt-1 ml-2'

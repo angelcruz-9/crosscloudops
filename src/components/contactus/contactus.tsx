@@ -50,10 +50,9 @@ const ContactUs: React.FC = () => {
         <div className="grid xl:grid-cols-[40%_60%]  justify-start items-start">
           <SignupFormDemo />
           <div className="flex flex-col justify-between mt-4 xl:mt-20 xl:ml-8">
-            <p className="text-white text-xl mt-2 ">
-              Ready to see how Cross Cloud Ops can help you drive rapid growth?
-              Contact us today with the form on the left, or instantly schedule
-              a meeting below.
+            <p className="text-white text-xl"><strong>Interested in accelerating your growth with Cross Cloud Ops?</strong></p>
+            <p className="text-white text-sm mt-2">
+              Fill out the form to the left or schedule a meeting directly with our experts. We look forward to exploring how we can support your success.
             </p>
             <div className="flex flex-col justify-start py-8">
               <label className="text-orange-400">Phone :</label>
@@ -73,7 +72,7 @@ const ContactUs: React.FC = () => {
                     <span>
                       <MdOutlineKeyboardDoubleArrowRight className="text-2xl" />
                     </span>
-                    Schedule a Demo
+                    Book a Meeting
                   </h2>
                 </div>
               </div>

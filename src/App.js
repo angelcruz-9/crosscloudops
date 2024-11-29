@@ -17,6 +17,7 @@ import Devops from './components/devops/devops';
 import ITStrategy from './components/itstrategy/itstrategy';
 import SoftwareDelivery from './components/softwaredelivery/softwaredelivery';
 import OutSourcing from './components/outsourcing/outsourcing';
+import PrivacyPolicy from './components/footer/privacy-policy';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>

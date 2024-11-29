@@ -11,7 +11,7 @@ const Root = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // Adjust the delay as needed
+    }, 0);
   }, []);
 
   return (

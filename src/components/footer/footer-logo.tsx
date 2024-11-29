@@ -2,14 +2,15 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const logos = [
-  "/assets/acquia-footer.png",
-  "/assets/aws-footer.png",
-  "/assets/azure-footer.png",
-  "/assets/freshworks-footer.png",
-  "/assets/gcp-footer.png",
-  "/assets/hubspot-footer.png",
-  "/assets/mulesoft-footer.png",
-  "/assets/salesforce-footer.webp",
+  "/assets/salesforce-header.png",
+  "/assets/hubspot-header.png",
+  "/assets/zoho-header.png",
+  "/assets/freshworks-header.png",
+  "/assets/acquia-header.png",
+  "/assets/mulesoft-header.png",
+  "/assets/aws-header.png",
+  "/assets/azure-header.png",
+  "/assets/gcp-header.png",
 ];
 
 const FooterLogo: React.FC = () => {
@@ -28,7 +29,7 @@ const FooterLogo: React.FC = () => {
   };
 
   return (
-    <footer className="container-common py-32 overflow-hidden">
+    <footer className="container-common overflow-hidden relative z-10">
       <div className="flex justify-center items-center overflow-hidden whitespace-nowrap">
         <motion.div className="flex" {...animation}>
           {logos.map((logo, index) => (
@@ -36,7 +37,8 @@ const FooterLogo: React.FC = () => {
               src={`${process.env.PUBLIC_URL}${logo}`}
               alt={`logo-${index}`}
               key={index}
-              className="w-28 h-16 mx-8 object-contain"
+              loading="lazy"
+              className="w-32 h-28 mx-8 object-contain"
             />
           ))}
           {logos.map((logo, index) => (
@@ -44,7 +46,8 @@ const FooterLogo: React.FC = () => {
               src={`${process.env.PUBLIC_URL}${logo}`}
               alt={`logo-${index + logos.length}`}
               key={index + logos.length}
-              className="w-28 h-16 mx-8 object-contain"
+              loading="lazy"
+              className="w-32 h-28 mx-8 object-contain "
             />
           ))}
         </motion.div>
