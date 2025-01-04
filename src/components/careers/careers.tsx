@@ -461,7 +461,6 @@ const Careers: React.FC = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         alert("Form submitted successfully!");
         setFormData({
           firstName: "",

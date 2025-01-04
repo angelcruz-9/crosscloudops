@@ -35,48 +35,36 @@ export function SignupFormDemo() {
     return regex.test(email);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    // Prevent multiple submissions
-    if (isSubmitting) return;
-    setIsSubmitting(true);
-
-    if (!recaptchaToken) {
-      alert("Please complete the reCAPTCHA");
-      setIsSubmitting(false); // Re-enable submission if reCAPTCHA is incomplete
+    if (isSubmitting || !recaptchaToken) {
+      alert(isSubmitting ? "Form is already submitting." : "Please complete the reCAPTCHA");
       return;
     }
-
-    const payload = { ...formData, recaptchaToken };
-
-    fetch("http://localhost:5000/send-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ payload }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        alert("Form submitted successfully!");
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          phoneNumber: "",
-          message: "",
-        });
-        setRecaptchaToken(null);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("There was an error submitting the form. Please try again.");
-      })
-      .finally(() => {
-        setIsSubmitting(false); // Re-enable the button after submission
+    setIsSubmitting(true);
+    try {
+      const payload = { ...formData, recaptchaToken };
+      const response = await fetch("https://node-crosscloudops.onrender.com/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ payload }),
       });
-  };
+
+      const data = await response.json();
+
+      if (!response.ok) throw new Error(data.message || "Submission failed");
+
+      alert("Form submitted successfully!");
+      setFormData({ firstName: "", lastName: "", email: "", phoneNumber: "", message: "" });
+      setRecaptchaToken(null);
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("Error submitting the form. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+};
+
 
   const onRecaptchaChange = (token: string | null) => {
     setRecaptchaToken(token);
