@@ -1,0 +1,21 @@
+# robots.txt for crosscloudops.com
+
+# Allow all web crawlers to access the entire site
+User-agent: *
+Disallow:
+
+# Block specific sections or files (optional, uncomment and edit as needed)
+# Disallow: /private/
+# Disallow: /admin/
+# Disallow: /login/
+
+# Allow specific crawlers access to all pages
+User-agent: Googlebot
+Disallow:
+
+# Block specific crawlers from accessing the site (optional, uncomment and edit as needed)
+# User-agent: Bingbot
+# Disallow: /
+
+# Sitemap location (replace with the actual location of your sitemap)
+Sitemap: https://crosscloudops.com/sitemap.xml
