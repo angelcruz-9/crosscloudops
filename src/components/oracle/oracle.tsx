@@ -2,7 +2,7 @@ import React from "react";
 
 const oracleData = {
   title:
-    "Our Oracle National Practice has been helping clients strategize, implement and manage Oracle solutions since 2002. We work with clients to resolve tough business problems by blending process, application and technology skills together.",
+    "We help businesses unlock the full potential of their Oracle investments—whether through cloud solutions, E-Business Suite, engineered systems, or business intelligence. With the Oracle Innovation Stack evolving rapidly, we ensure our clients stay ahead of the curve.",
   description: (
     <>
       <p className="text-lg text-white leading-6">
@@ -24,10 +24,7 @@ const oracleData = {
   ),
   description1: (
     <p className="text-lg leading-6 text-white">
-      By working closely with our geographic offices, we blend local skills with
-      deep expertise to deliver high-quality solutions. For 24×7 coverage and
-      alternative delivery options, we provide offshore capability through Marvi
-      Infotech India.
+      What sets us apart is our commitment to exceptional experiences—for our clients and our team. From thoughtful, personal gestures to big league moments, we believe in the power of meaningful connection. Our teams are highly specialized, collaborative, and transparent, delivering solutions with purpose and impact.
     </p>
   ),
   imgUrl: (

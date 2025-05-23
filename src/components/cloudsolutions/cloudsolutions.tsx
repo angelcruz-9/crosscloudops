@@ -66,7 +66,7 @@ const cloudData = {
       ),
       cardTitle: "Migration",
       cardDesc:
-        "Azure and AWS cloud computing services are delivered by our team of Marvi Infotech Certified Professional Architects. They determine which applications are the best candidates for migration, and by which migration strategy to meet time and budget requirements.",
+        "Azure and AWS cloud computing services are delivered by our Certified Professional Architects. They determine which applications are the best candidates for migration, and by which migration strategy to meet time and budget requirements.",
       cardSubItems: [
         {
           text: "Application rationalization and migration prioritization",

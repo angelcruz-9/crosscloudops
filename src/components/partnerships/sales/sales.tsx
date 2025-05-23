@@ -68,6 +68,13 @@ const FuturisticListView: React.FC = () => {
           <p className="text-[20px] leading-8 text-white mb-8">
             {salesData.description1}
           </p>
+          <div className="w-1/3 relative left-[35%]">
+          <h2
+              className={`text-[28px] text-center font-bold cursor-pointer tab text-blue-500 active mb-4`}
+            >
+              Marketing Cloud
+            </h2>
+          </div>
           <p className="text-[20px] leading-8 text-white mb-12">
             {salesData.description2}
           </p>

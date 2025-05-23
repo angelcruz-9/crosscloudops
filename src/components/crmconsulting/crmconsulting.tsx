@@ -17,7 +17,7 @@ const crmData = {
       <br />
       <p className="text-lg leading-6 text-white">
         Implementation success with these platforms requires a comprehensive
-        approach. Marvi Infotech Consulting has CRM consultants that can handle
+        approach. Cross Cloud Ops has CRM consultants that can handle
         any CRM project from defining a strategy and roadmap, to implementation,
         deploying new features, and ongoing support.
       </p>

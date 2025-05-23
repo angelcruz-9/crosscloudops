@@ -81,7 +81,7 @@ const Footer: React.FC = () => {
       </div>
       <div className="flex flex-row xl:justify-center xl:items-center">
         <p className="py-4 text-center leading-7 text-lg font-normal tracking-wide text-[#ffffff]">
-          Copyright 2024 © All Rights Reserved
+          Copyright 2025 © All Rights Reserved
         </p>
         <span className="py-4 px-4 text-center leading-7 text-lg font-normal tracking-wide text-[#ffffff]">|</span>
         <Link className="py-4 text-center leading-7 text-lg font-normal tracking-wide  text-[#ffffff]" to='/privacy-policy'>Privacy Policy</Link>

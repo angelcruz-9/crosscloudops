@@ -3,7 +3,7 @@ import Tabs from "../cloudsolutions/card";
 
 const aiData = {
   title:
-    "Using the power of artificial intelligence (AI) is no longer a choice; it’s a necessity. Whether you’re just starting to adopt AI or seeking to enhance current AI initiatives, Marvi Infotech Consulting is here to guide you through this disruptive landscape while prioritizing governance and security.",
+    "Using the power of artificial intelligence (AI) is no longer a choice; it’s a necessity. Whether you’re just starting to adopt AI or seeking to enhance current AI initiatives, Cross Cloud Ops is here to guide you through this disruptive landscape while prioritizing governance and security.",
   description: (
     <>
       <p className="text-lg leading-6 text-white">
