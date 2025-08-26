@@ -45,7 +45,7 @@ const CardImage: React.FC<CardProps> = ({ imageSrc, title, description, linkUrl,
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { delay: 0.8, duration: 0.8 } }}
       >
-        <a href={linkUrl} className="text-blue-500 hover:text-blue-800"  aria-label="Learn about our services at Cross Cloud Ops">
+        <a href={linkUrl} target='_blank' rel='noreferrer' className="text-blue-500 hover:text-blue-800"  aria-label="Learn about our services at Cross Cloud Ops">
           {linkText}
         </a>
         <motion.div className='text-blue-500 hover:text-blue-800 mt-1 ml-2'

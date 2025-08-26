@@ -42,6 +42,14 @@ const cardsData = [
     linkUrl: "/contactus",
     linkText: "Learn more",
   },
+  {
+    imageSrc: "/assets/cybersecurity.png",
+    title: "CyberSecurity",
+    description:
+      "Cybercots provides robust cybersecurity solutions tailored for your business. We safeguard your digital assets from evolving threats, ensuring your operations are always secure and protected.",
+    linkUrl: "https://www.cybercots.com/index.html",
+    linkText: "Learn more",
+  },
 ];
 
 const Services: React.FC = () => {
